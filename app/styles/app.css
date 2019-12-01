@@ -1,0 +1,18 @@
+main {
+  width: 100%;
+  height: 100%;
+}
+.controls {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+.info {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+p {
+  margin-top: 0;
+}

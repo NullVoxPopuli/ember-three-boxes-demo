@@ -1,0 +1,12 @@
+<div class='controls'>
+  <label>
+    Amount
+    {{#let (array 20 100 200 500 1000 2000 10000) as |counts|}}
+      <XSelect @value={{@value}} @onChange={{@onChange}} as |x|>
+        {{#each counts as |count|}}
+          <x.option @value={{count}}>{{count}}</x.option>
+        {{/each}}
+      </XSelect>
+    {{/let}}
+  </label>
+</div>
