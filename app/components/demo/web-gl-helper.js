@@ -11,26 +11,22 @@ let material = new THREE.MeshNormalMaterial();
 export class WebGlHelper {
   frames = Array(60).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
-
   boxes = []; // references to all meshes
 
   scene = new THREE.Scene();
   light = new THREE.DirectionalLight(0xffffff, 1);
   camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
 
   constructor({ container, onFPSUpdate, }) {
     this.element = container;
     this.onFPSUpdate = onFPSUpdate;
 
-
     // fov, ratio, zNear, zFar
     this.camera.position.set(0, 0, 3.2);
 		this.light.position.set( -5, 0, -10 ).normalize();
     this.scene.add(this.light);
-
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
     this.renderer.setSize( window.innerWidth, window.innerHeight );
-
     this.element.appendChild(this.renderer.domElement);
 
     this.animate = this.animate.bind(this);
@@ -42,16 +38,13 @@ export class WebGlHelper {
     let boxesHaveLess = diff < 0;
     let same = diff === 0;
 
-    // console.log({ diff, same, boxesHaveLess, boxesHaveMore });
     if (same) return;
 
     if (boxesHaveLess) {
       for (let i = 0; i < 0 - diff; i++) {
         let rotation = rotations[i];
-
         this.addBox(rotation);
       }
-
       return;
     }
 
@@ -62,8 +55,6 @@ export class WebGlHelper {
       }
       return;
     }
-
-    console.error('math error');
   }
 
   addBox(rotation) {
@@ -82,7 +73,6 @@ export class WebGlHelper {
 
       for (let i = 0; i < this.boxes.length; i++) {
         let box = this.boxes[i];
-
         box.rotation.x += 0.01;
         box.rotation.y += 0.01;
         box.rotation.z += 0.01;
@@ -107,4 +97,3 @@ export class WebGlHelper {
     cancelAnimationFrame(this.frame);
   }
 }
-
