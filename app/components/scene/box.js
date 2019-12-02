@@ -19,6 +19,7 @@ export default class SceneBoxComponent extends Component {
 
   @action
   updateRotation({ x, y, z }) {
+    console.log('update --- this should be getting invoked wildly');
     this.mesh.rotation.set(x, y, z);
   }
 
