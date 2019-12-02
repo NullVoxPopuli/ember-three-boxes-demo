@@ -18,7 +18,7 @@ module.exports = function(environment) {
     },
 
     trackedBuiltIns: {
-
+      USE_PROXY: true,
     },
 
     APP: {

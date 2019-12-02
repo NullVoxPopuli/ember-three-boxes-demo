@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { TrackedArray } from 'tracked-built-ins';
 
 import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
 
@@ -11,7 +12,7 @@ export default class DemoComponent extends Component {
 
   @tracked count;
 
-  @tracked rotations = newRotations();
+  @tracked rotations = (newRotations());
   @tracked fps = 0;
 
   get aspectRatio() {
@@ -21,10 +22,12 @@ export default class DemoComponent extends Component {
   @action
   updateCount(newCount) {
     this.count = newCount;
-    this.rotations = newRotations(this.count);
+    this.rotations = TrackedArray.from(newRotations(this.count));
   }
 
-  animate() {
+  @action
+  animate(updateCanvas) {
+      updateCanvas();
     let last = Date.now();
     let boundCallback;
 
@@ -32,16 +35,15 @@ export default class DemoComponent extends Component {
       this.frame = requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < this.rotations.length; i++) {
-        let box = this.rotations[i];
-        box[0] += 0.01;
-        box[1] += 0.01;
-        box[2] += 0.01;
+        this.rotations[i][0] += 0.01;
+        this.rotations[i][1] += 0.01;
+        this.rotations[i][2] += 0.01;
       }
 
       // eslint-disable-next-line
       this.rotations = this.rotations; // notify of content change
 
-      // this.renderer.render(this.scene, this.camera);
+      updateCanvas();
 
       const now = Date.now();
       const elapsed = now - last;

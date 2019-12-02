@@ -20,7 +20,7 @@ export default class SceneComponent extends Component {
     this.element.appendChild(this.renderer.domElement);
 
     if (this.camera) {
-      this.render();
+      this.args.onInit(this.render);
     }
   }
 
@@ -29,13 +29,12 @@ export default class SceneComponent extends Component {
     this.camera = camera;
 
     if (this.element) {
-      this.render();
+      this.args.onInit(this.render);
     }
   }
 
   @action
   render() {
-    console.log('rendering?', this.scene, this.camera);
     this.renderer.render(this.scene, this.camera);
   }
 }
