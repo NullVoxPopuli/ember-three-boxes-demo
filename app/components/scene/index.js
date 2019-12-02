@@ -33,7 +33,9 @@ export default class SceneComponent extends Component {
     }
   }
 
+  @action
   render() {
+    console.log('rendering?', this.scene, this.camera);
     this.renderer.render(this.scene, this.camera);
   }
 }

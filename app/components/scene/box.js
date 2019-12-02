@@ -11,6 +11,7 @@ export default class SceneBoxComponent extends Component {
 
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.rotation.set(...args.rotation);
+    this.mesh.position.set(0, 0, 0);
 
     args.scene.add(this.mesh);
   }

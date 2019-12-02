@@ -18,7 +18,7 @@ export default class ScenePerspectiveCameraComponent extends Component {
     let { x, y, z, fov, aspectRatio, near, far } = options;
 
     this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-    this.camera.position.set(x, y, z).normalize();
+    this.camera.position.set(x, y, z);
 
     args.setCamera(this.camera);
   }
