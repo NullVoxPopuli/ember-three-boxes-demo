@@ -39,9 +39,6 @@ export default class DemoComponent extends Component {
         this.rotations[i].z += 0.01;
       }
 
-      // eslint-disable-next-line
-      this.rotations = this.rotations; // notify of content change
-
       updateCanvas();
 
       const now = Date.now();
