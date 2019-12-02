@@ -1,8 +1,6 @@
 import THREE from 'three';
 
-function avg(arr) {
-  return arr.reduce((total, num) => total + num, 0) / arr.length;
-}
+import { avg } from 'ember-three-boxes-demo/utils/utils';
 
 // Static things that won't change
 let geometry = new THREE.BoxGeometry( 2, 2, 2 );
