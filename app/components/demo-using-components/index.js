@@ -27,7 +27,6 @@ export default class DemoComponent extends Component {
 
   @action
   animate(updateCanvas) {
-      updateCanvas();
     let last = Date.now();
     let boundCallback;
 

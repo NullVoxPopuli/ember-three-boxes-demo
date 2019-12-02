@@ -11,16 +11,17 @@ export default class SceneBoxComponent extends Component {
     super(owner, args);
 
     this.mesh = new THREE.Mesh(geometry, material);
-    this.updateRotation(args.rotation);
+
+    let { rotation: r } = args;
+    this.updateRotation([r.x, r.y, r.z]);
     this.mesh.position.set(0, 0, 0);
 
     args.scene.add(this.mesh);
   }
 
   @action
-  updateRotation({ x, y, z }) {
-    console.log('update --- this should be getting invoked wildly');
-    this.mesh.rotation.set(x, y, z);
+  updateRotation(rotation) {
+    this.mesh.rotation.set(...rotation);
   }
 
   willDestroy() {
