@@ -12,7 +12,7 @@ export default class DemoComponent extends Component {
 
   @tracked count;
 
-  @tracked rotations = (newRotations());
+  @tracked rotations = TrackedArray.from(newRotations());
   @tracked fps = 0;
 
   get aspectRatio() {
@@ -35,9 +35,9 @@ export default class DemoComponent extends Component {
       this.frame = requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < this.rotations.length; i++) {
-        this.rotations[i][0] += 0.01;
-        this.rotations[i][1] += 0.01;
-        this.rotations[i][2] += 0.01;
+        this.rotations[i].x += 0.01;
+        this.rotations[i].y += 0.01;
+        this.rotations[i].z += 0.01;
       }
 
       // eslint-disable-next-line
