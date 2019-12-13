@@ -5,7 +5,6 @@ import { TrackedArray } from 'tracked-built-ins';
 
 import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
 
-
 export default class DemoComponent extends Component {
   frames = Array(60).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
@@ -58,4 +57,3 @@ export default class DemoComponent extends Component {
     cancelAnimationFrame(this.frame);
   }
 }
-
