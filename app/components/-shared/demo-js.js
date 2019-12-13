@@ -31,7 +31,7 @@ export default class DemoComponent extends Component {
     let boundCallback;
 
     let fpsUpdate = () => {
-      this.fps = Math.ceil(avg(this.frames));
+      this.fps = Math.round(avg(this.frames));
     }
     let updateFps = throttle(120, fpsUpdate);
 

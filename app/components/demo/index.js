@@ -31,7 +31,7 @@ export default class DemoComponent extends Component {
   setup(element) {
     this.renderer = new WebGlHelper({
       container: element,
-      onFPSUpdate: throttle(120, (fps) => this.fps = Math.ceil(fps)),
+      onFPSUpdate: throttle(120, (fps) => this.fps = Math.round(fps)),
     });
 
     this.renderer.animate();
