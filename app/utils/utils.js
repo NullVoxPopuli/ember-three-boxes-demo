@@ -1,6 +1,4 @@
-import { TrackedArray, TrackedMap } from 'tracked-built-ins';
 import { tracked } from '@glimmer/tracking';
-import { set } from '@ember/object';
 
 export function avg(arr) {
   return arr.reduce((total, num) => total + num, 0) / arr.length;
