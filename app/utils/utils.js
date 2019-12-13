@@ -1,5 +1,6 @@
-import { TrackedArray } from 'tracked-built-ins';
+import { TrackedArray, TrackedMap } from 'tracked-built-ins';
 import { tracked } from '@glimmer/tracking';
+import { set } from '@ember/object';
 
 export function avg(arr) {
   return arr.reduce((total, num) => total + num, 0) / arr.length;
@@ -15,13 +16,28 @@ class Rotation {
   @tracked z = 0;
 }
 
-export function newRotations(num = 20) {
-  return Array(num).fill().map(() => {
-    let r = new Rotation();
-    r.x = random();
-    r.y = random();
-    r.z = random();
+let cache;
 
-    return r;
-  });
+function initialValuesFor(num) {
+  if (!cache) cache = {};
+
+  let existing = cache[num];
+
+  if (existing) return existing;
+
+  let array = Array(num).fill().map(() => new Rotation());
+
+  for (let i = 0; i < array.length; i++) {
+    array[i].x = random();
+    array[i].y = random();
+    array[i].z = random();
+  }
+
+  cache[num] = array;
+
+  return array;
+}
+
+export function newRotations(num = 20) {
+  return initialValuesFor(num);
 }

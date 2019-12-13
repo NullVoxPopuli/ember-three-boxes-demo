@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { throttle } from 'throttle-debounce';
@@ -14,17 +15,13 @@ function newRotations(num = 20) {
 }
 
 export default class DemoComponent extends Component {
-  @tracked count;
+  @service appState;
 
-  @tracked rotations = newRotations();
   @tracked fps = 0;
 
   @action
-  updateCount(newCount) {
-    this.count = newCount;
-    this.rotations = newRotations(this.count);
-
-    this.renderer.syncBoxes(this.rotations);
+  onUpdate() {
+    this.renderer.syncBoxes(newRotations(this.appState.count));
   }
 
   @action
@@ -35,6 +32,7 @@ export default class DemoComponent extends Component {
     });
 
     this.renderer.animate();
+    this.onUpdate();
   }
 }
 
