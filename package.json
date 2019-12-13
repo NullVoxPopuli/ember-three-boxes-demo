@@ -52,5 +52,8 @@
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "throttle-debounce": "^2.1.0"
   }
 }

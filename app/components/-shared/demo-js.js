@@ -2,11 +2,12 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { TrackedArray } from 'tracked-built-ins';
+import { throttle } from 'throttle-debounce';
 
 import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
 
 export default class DemoComponent extends Component {
-  frames = Array(60).fill(0); // for smoothing out FPS counter
+  frames = Array(5).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
 
   @tracked count;
@@ -29,6 +30,11 @@ export default class DemoComponent extends Component {
     let last = Date.now();
     let boundCallback;
 
+    let fpsUpdate = () => {
+      this.fps = Math.ceil(avg(this.frames));
+    }
+    let updateFps = throttle(120, fpsUpdate);
+
     function loop() {
       this.frame = requestAnimationFrame(boundCallback);
 
@@ -44,8 +50,9 @@ export default class DemoComponent extends Component {
       const elapsed = now - last;
 
       this.frames.shift();
-      this.frames[frames.length] = 1000 / elapsed;
-      this.fps = Math.round(avg(this.frames));
+      this.frames.push(1000 / elapsed);
+      updateFps();
+
       last = now;
     }
 

@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { throttle } from 'throttle-debounce';
 
 import { WebGlHelper } from './web-gl-helper';
 
@@ -30,7 +31,7 @@ export default class DemoComponent extends Component {
   setup(element) {
     this.renderer = new WebGlHelper({
       container: element,
-      onFPSUpdate: (fps) => this.fps = fps,
+      onFPSUpdate: throttle(120, (fps) => this.fps = Math.ceil(fps)),
     });
 
     this.renderer.animate();
