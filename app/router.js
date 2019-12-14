@@ -7,6 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.route('with-components');
-  this.route('with-custom-component');
+  this.route('with-glimmer');
+  this.route('without-templates');
 });

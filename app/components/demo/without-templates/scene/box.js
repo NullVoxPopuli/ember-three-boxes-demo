@@ -1,4 +1,4 @@
-import Component from 'ember-three-boxes-demo/custom';
+import Component from '../custom';
 
 import THREE from 'three';
 
@@ -19,7 +19,15 @@ export default class SceneBoxComponent extends Component {
   }
 
   didUpdate() {
-    this.mesh.rotation.set(...this.args.rotation);
+    let { rotation } = this.args;
+
+    this.mesh.rotation.x = rotation.x;
+    this.mesh.rotation.y = rotation.y;
+    this.mesh.rotation.z = rotation.z;
+  }
+
+  updateRotation(rotation) {
+    this.mesh.rotation.set(...rotation);
   }
 
   willDestroy() {

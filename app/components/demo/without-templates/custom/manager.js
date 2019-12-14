@@ -11,25 +11,28 @@ export default class RenderlessComponentManager {
     let owner = getOwner(attrs);
     return new this(owner);
   }
+
   constructor(owner) {
     setOwner(this, owner);
-    this.capabilities = capabilities('3.4', {
+    this.capabilities = capabilities('3.13', {
       destructor: true,
-      asyncLifecycleCallbacks: true,
-    });
+      asyncLifecycleCallbacks: false,
+      updateHook: true,
+    })
   }
 
   createComponent(Klass, args) {
-    let instance = new Klass(args.named);
-    setOwner(instance, getOwner(this));
+    let instance = new Klass(getOwner(this), args.named);
     return instance;
   }
+
+  didCreateComponent(component) {}
 
   updateComponent(component, args) {
     set(component, 'args', args.named);
   }
 
-    destroyComponent(component) {
+  destroyComponent(component) {
     if (component.isDestroying) {
       return;
     }

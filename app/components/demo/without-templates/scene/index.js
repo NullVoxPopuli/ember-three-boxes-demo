@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '../custom';
 import { action } from '@ember/object';
 
 import THREE from 'three';

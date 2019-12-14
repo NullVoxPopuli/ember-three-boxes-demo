@@ -1,4 +1,4 @@
-import { setOwner } from './owner';
+import { setOwner, getOwner } from '@ember/application';
 
 const DESTROYING = new WeakMap();
 const DESTROYED = new WeakMap();
@@ -11,7 +11,12 @@ export function setDestroyed(component) {
 }
 
 export class RenderlessComponent {
-  constructor(owner, args) {
+  static create(attrs) {
+    let owner = getOwner(attrs);
+    return new this(owner);
+  }
+
+  constructor(owner, args = {}) {
     this.args = args;
     setOwner(this, owner);
 

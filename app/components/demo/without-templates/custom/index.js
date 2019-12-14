@@ -1,6 +1,6 @@
 import { setComponentManager } from '@ember/component';
-import { RenderlessComponent } from 'ember-three-boxes-demo/component-managers/component';
-import RenderlessComponentManager from 'ember-three-boxes-demo/component-managers/renderless';
+import { RenderlessComponent } from './component';
+import RenderlessComponentManager from './manager';
 
 setComponentManager((owner) => {
   return new RenderlessComponentManager(owner)

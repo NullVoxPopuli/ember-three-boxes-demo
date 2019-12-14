@@ -1,4 +1,4 @@
-import Component from 'ember-three-boxes-demo/custom';
+import Component from '../custom';
 import THREE from 'three';
 
 const defaults = {
