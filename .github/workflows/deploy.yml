@@ -14,6 +14,7 @@ jobs:
         run: |
           yarn
           yarn ember build --environment=production
+          cp dist/index.html dist/404.html
       # -
       #   name: Deploy
       #   if: success()

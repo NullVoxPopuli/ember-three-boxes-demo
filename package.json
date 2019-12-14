@@ -12,7 +12,7 @@
   },
   "scripts": {
     "deploy": "git push origin :gh-pages; git subtree push --prefix dist origin gh-pages && git push origin gh-pages",
-    "build": "ember build && cp dist/index.html dist/404.html",
+    "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
