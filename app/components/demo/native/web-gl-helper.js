@@ -93,5 +93,6 @@ export class WebGlHelper {
 
   willDestroy() {
     cancelAnimationFrame(this.frame);
+    this.scene.dispose();
   }
 }

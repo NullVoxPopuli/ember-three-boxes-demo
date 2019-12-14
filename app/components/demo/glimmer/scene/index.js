@@ -37,4 +37,8 @@ export default class SceneComponent extends Component {
   render() {
     this.renderer.render(this.scene, this.camera);
   }
+
+  willDestroy() {
+    this.scene.dispose();
+  }
 }
