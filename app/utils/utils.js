@@ -9,9 +9,10 @@ export function random() {
 }
 
 class Rotation {
-  @tracked x = 0;
-  @tracked y = 0;
-  @tracked z = 0;
+  @tracked r = { x: 0, y: 0, z: 0 };
+  // @tracked x = 0;
+  // @tracked y = 0;
+  // @tracked z = 0;
 }
 
 let cache;
@@ -26,9 +27,14 @@ function initialValuesFor(num) {
   let array = Array(num).fill().map(() => new Rotation());
 
   for (let i = 0; i < array.length; i++) {
-    array[i].x = random();
-    array[i].y = random();
-    array[i].z = random();
+    array[i].r = {
+      x: random(),
+      y: random(),
+      z: random(),
+    };
+    // array[i].x = random();
+    // array[i].y = random();
+    // array[i].z = random();
   }
 
   cache[num] = array;

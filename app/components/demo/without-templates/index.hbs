@@ -7,7 +7,8 @@
     <s.PerspectiveCamera @z={{3.2}} @aspectRatio={{this.aspectRatio}} />
 
     {{#each this.rotations as |rotation|}}
-      <s.Box @rx={{rotation.x}} @ry={{rotation.y}} @rz={{rotation.z}} />
+      {{!-- <s.Box @rx={{rotation.x}} @ry={{rotation.y}} @rz={{rotation.z}} /> --}}
+      <s.Box @rotation={{rotation.r}} />
     {{/each}}
 
   </Demo::WithoutTemplates::Scene>

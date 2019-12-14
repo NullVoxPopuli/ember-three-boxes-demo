@@ -10,7 +10,7 @@ import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
 export default class DemoComponent extends Component {
   @service appState;
 
-  frames = Array(5).fill(0); // for smoothing out FPS counter
+  frames = Array(10).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
 
   @tracked fps = 0;
@@ -37,9 +37,14 @@ export default class DemoComponent extends Component {
       this.frame = requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < this.rotations.length; i++) {
-        this.rotations[i].x += 0.01;
-        this.rotations[i].y += 0.01;
-        this.rotations[i].z += 0.01;
+        // this.rotations[i].x += 0.01;
+        // this.rotations[i].y += 0.01;
+        // this.rotations[i].z += 0.01;
+        this.rotations[i].r = {
+          x: this.rotations[i].r.x + 0.01,
+          y: this.rotations[i].r.y + 0.01,
+          z: this.rotations[i].r.z + 0.01,
+        }
       }
 
       updateCanvas();

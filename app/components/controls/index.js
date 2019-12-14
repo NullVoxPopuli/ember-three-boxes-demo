@@ -7,7 +7,7 @@ export default class Controls extends Component {
 
   @action
   updateCount(newCount) {
-    this.appState.count = newCount;
+    this.appState.updateCount(newCount);
 
     if (this.args.onUpdate) {
       this.args.onUpdate(newCount);

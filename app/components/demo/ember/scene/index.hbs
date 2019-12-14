@@ -1,0 +1,12 @@
+<div {{did-insert this.setElement}}></div>
+
+{{yield
+  (hash
+    DirectionalLight=(component 'demo/ember/scene/directional-light' scene=this.scene)
+    PerspectiveCamera=(component 'demo/ember/scene/perspective-camera'
+      scene=this.scene
+      setCamera=this.setCamera
+    )
+    Box=(component 'demo/ember/scene/box' scene=this.scene render=this.render)
+  )
+}}

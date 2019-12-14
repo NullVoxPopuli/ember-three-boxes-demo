@@ -7,7 +7,7 @@ let geometry = new THREE.BoxGeometry( 2, 2, 2 );
 let material = new THREE.MeshNormalMaterial();
 
 export class WebGlHelper {
-  frames = Array(5).fill(0); // for smoothing out FPS counter
+  frames = Array(10).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
   boxes = []; // references to all meshes
 
