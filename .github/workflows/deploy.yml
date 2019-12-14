@@ -30,7 +30,7 @@ jobs:
       #     ACTIONS_DEPLOY_KEY: ${{ secrets.GITHUB_TOKEN }}
       #     PUBLISH_BRANCH: gh-pages
       #     PUBLISH_DIR: ./dist
-       - name: Deploy
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
