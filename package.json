@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "ember github-pages:commit --message 'Initial gh-pages release'",
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
@@ -30,6 +30,7 @@
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^7.13.2",
     "ember-cli-dependency-checker": "^3.1.0",
+    "ember-cli-github-pages": "^0.2.2",
     "ember-cli-htmlbars": "^4.2.0",
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-sri": "^2.1.1",
