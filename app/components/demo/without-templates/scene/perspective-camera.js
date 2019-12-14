@@ -1,4 +1,4 @@
-import Component from '../custom';
+import { LifeCycleComponent } from 'ember-lifecycle-component';
 import THREE from 'three';
 
 const defaults = {
@@ -10,7 +10,7 @@ const defaults = {
   z: 0,
 }
 
-export default class ScenePerspectiveCameraComponent extends Component {
+export default class ScenePerspectiveCameraComponent extends LifeCycleComponent {
   constructor(owner, args) {
     super(owner, args);
 

@@ -1,11 +1,11 @@
-import Component from '../custom';
+import { LifeCycleComponent } from 'ember-lifecycle-component';
 
 import THREE from 'three';
 
 let geometry = new THREE.BoxGeometry( 2, 2, 2 );
 let material = new THREE.MeshNormalMaterial();
 
-export default class SceneBoxComponent extends Component {
+export default class SceneBoxComponent extends LifeCycleComponent {
   constructor(owner, args) {
     super(owner, args);
 

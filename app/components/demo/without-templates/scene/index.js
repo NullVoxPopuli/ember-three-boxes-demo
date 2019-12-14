@@ -1,9 +1,9 @@
-import Component from '../custom';
+import { LifeCycleComponent } from 'ember-lifecycle-component';
 import { action } from '@ember/object';
 
 import THREE from 'three';
 
-export default class SceneComponent extends Component {
+export default class SceneComponent extends LifeCycleComponent {
   element = undefined;
 
   constructor(owner, args) {
