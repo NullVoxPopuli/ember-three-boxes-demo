@@ -11,24 +11,18 @@ export default class SceneBoxComponent extends Component {
 
     this.mesh = new THREE.Mesh(geometry, material);
 
-    let { rotation: r } = args;
-    this.updateRotation([r.x, r.y, r.z]);
+    let { rx, ry, rz } = this.args;
+    this.didUpdate([rx, ry, rz]);
     this.mesh.position.set(0, 0, 0);
 
     args.scene.add(this.mesh);
   }
 
   didUpdate() {
-    let { rotation } = this.args;
-
-    this.mesh.rotation.x = rotation.x;
-    this.mesh.rotation.y = rotation.y;
-    this.mesh.rotation.z = rotation.z;
+    let { rx, ry, rz } = this.args;
+    this.mesh.rotation.set(rx, ry, rz);
   }
 
-  updateRotation(rotation) {
-    this.mesh.rotation.set(...rotation);
-  }
 
   willDestroy() {
     this.args.scene.remove(this.mesh);

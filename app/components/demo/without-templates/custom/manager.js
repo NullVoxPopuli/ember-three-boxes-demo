@@ -12,17 +12,19 @@ export default class RenderlessComponentManager {
     return new this(owner);
   }
 
+  capabilities = capabilities('3.13', {
+    destructor: true,
+    asyncLifecycleCallbacks: true,
+    updateHook: true,
+  });
+
   constructor(owner) {
     setOwner(this, owner);
-    this.capabilities = capabilities('3.13', {
-      destructor: true,
-      asyncLifecycleCallbacks: false,
-      updateHook: true,
-    })
   }
 
   createComponent(Klass, args) {
     let instance = new Klass(getOwner(this), args.named);
+
     return instance;
   }
 
@@ -30,6 +32,10 @@ export default class RenderlessComponentManager {
 
   updateComponent(component, args) {
     set(component, 'args', args.named);
+  }
+
+  didUpdateComponent(component) {
+    component.didUpdate();
   }
 
   destroyComponent(component) {
@@ -50,9 +56,6 @@ export default class RenderlessComponentManager {
     return component;
   }
 
-  didUpdateComponent(component) {
-    component.didUpdate();
-  }
 }
 
 

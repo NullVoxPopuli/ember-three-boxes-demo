@@ -1,5 +1,5 @@
 <Info @fps={{this.fps}} />
-<Controls />
+<Controls @onUpdate={{this.onCountUpdate}} />
 
 <main>
   <Demo::WithoutTemplates::Scene @onInit={{this.animate}} as |s|>
@@ -7,7 +7,7 @@
     <s.PerspectiveCamera @z={{3.2}} @aspectRatio={{this.aspectRatio}} />
 
     {{#each this.rotations as |rotation|}}
-      <s.Box @rotation={{rotation}} />
+      <s.Box @rx={{rotation.x}} @ry={{rotation.y}} @rz={{rotation.z}} />
     {{/each}}
 
   </Demo::WithoutTemplates::Scene>
