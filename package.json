@@ -11,6 +11,7 @@
     "test": "tests"
   },
   "scripts": {
+    "deploy": "git push origin `git subtree split --prefix dist master`:gh-pages --force",
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
