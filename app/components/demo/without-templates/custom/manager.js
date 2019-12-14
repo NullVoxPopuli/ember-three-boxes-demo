@@ -59,7 +59,6 @@ export default class RenderlessComponentManager {
 }
 
 
-
 function scheduledDestroyComponent(component, meta) {
   if (component.isDestroyed) {
     return;
