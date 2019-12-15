@@ -4,7 +4,12 @@
     {{#let (array 20 100 200 500 1000 2000 10000) as |counts|}}
       <select {{on 'change' this.updateCount}}>
         {{#each counts as |count|}}
-          <option value={{count}}>{{count}}</option>
+          <option
+            selected={{eq this.appState.count count}}
+            value={{count}}
+          >
+            {{count}}
+          </option>
         {{/each}}
       </select>
     {{/let}}
