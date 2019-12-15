@@ -1,8 +1,7 @@
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { TrackedArray } from 'tracked-built-ins';
+import { action, computed } from '@ember/object';
 import { throttle } from 'throttle-debounce';
 
 import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
@@ -14,10 +13,6 @@ export default class DemoComponent extends Component {
   frame = undefined; // for tracking the current frame
 
   @tracked fps = 0;
-
-  get rotations() {
-    return newRotations(this.appState.count);
-  }
 
   get aspectRatio() {
     return window.innerWidth / window.innerHeight;
@@ -34,16 +29,19 @@ export default class DemoComponent extends Component {
     let updateFps = throttle(120, fpsUpdate);
 
     function loop() {
+      let rotations = this.appState.rotations;
       this.frame = requestAnimationFrame(boundCallback);
 
-      for (let i = 0; i < this.rotations.length; i++) {
+      for (let i = 0; i < rotations.length; i++) {
+
         // this.rotations[i].x += 0.01;
         // this.rotations[i].y += 0.01;
         // this.rotations[i].z += 0.01;
-        this.rotations[i].r = {
-          x: this.rotations[i].r.x + 0.01,
-          y: this.rotations[i].r.y + 0.01,
-          z: this.rotations[i].r.z + 0.01,
+        let rotation = rotations[i];
+        rotation.r = {
+          x: rotation.r.x + 0.01,
+          y: rotation.r.y + 0.01,
+          z: rotation.r.z + 0.01,
         }
       }
 

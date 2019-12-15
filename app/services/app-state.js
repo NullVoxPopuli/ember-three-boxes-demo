@@ -1,9 +1,14 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import qs from 'qs';
+import {newRotations} from '../utils/utils';
+import { tracked as pTracked, TrackedArray } from 'tracked-built-ins';
 
 export default class AppStateService extends Service {
   @tracked count = 20;
+
+  // @pTracked rotations = [];
+  @tracked rotations = [];
 
   constructor() {
     super(...arguments);
@@ -18,9 +23,16 @@ export default class AppStateService extends Service {
         this.count = parsedInt;
       }
     }
+
+    this.updateRotations();
   }
 
   updateCount(newCount) {
     this.count = newCount;
+    this.updateRotations();
+  }
+
+  updateRotations() {
+    this.rotations = newRotations(this.count);
   }
 }

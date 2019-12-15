@@ -15,33 +15,16 @@ class Rotation {
   // @tracked z = 0;
 }
 
-let cache;
+export function newRotations(num = 20) {
+  return Array(num).fill().map(() => {
+    let r = new Rotation();
 
-function initialValuesFor(num) {
-  if (!cache) cache = {};
-
-  let existing = cache[num];
-
-  if (existing) return existing;
-
-  let array = Array(num).fill().map(() => new Rotation());
-
-  for (let i = 0; i < array.length; i++) {
-    array[i].r = {
+    r.r = {
       x: random(),
       y: random(),
       z: random(),
     };
-    // array[i].x = random();
-    // array[i].y = random();
-    // array[i].z = random();
-  }
 
-  cache[num] = array;
-
-  return array;
-}
-
-export function newRotations(num = 20) {
-  return initialValuesFor(num);
+    return r;
+  });
 }
