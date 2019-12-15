@@ -143,4 +143,4 @@ let r=Array(e).fill().map(()=>new m)
 for(let o=0;o<r.length;o++)r[o].r={x:i(),y:i(),z:i()}
 return l[e]=r,r}(e)}
 let l,m=(s=class{constructor(){(0,t.default)(this,"r",a,this)}},a=(0,o.default)(s.prototype,"r",[Ember._tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return{x:0,y:0,z:0}}}),s)})),define("ember-three-boxes-demo/config/environment",[],(function(){try{var e="ember-three-boxes-demo/config/environment",t=document.querySelector('meta[name="'+e+'"]').getAttribute("content"),r={default:JSON.parse(decodeURIComponent(t))}
-return Object.defineProperty(r,"__esModule",{value:!0}),r}catch(o){throw new Error('Could not read config from meta tag with name "'+e+'".')}})),runningTests||require("ember-three-boxes-demo/app").default.create({name:"ember-three-boxes-demo",version:"0.0.0+53012fef"})
+return Object.defineProperty(r,"__esModule",{value:!0}),r}catch(o){throw new Error('Could not read config from meta tag with name "'+e+'".')}})),runningTests||require("ember-three-boxes-demo/app").default.create({name:"ember-three-boxes-demo",version:"0.0.0+2b96e5ba"})
