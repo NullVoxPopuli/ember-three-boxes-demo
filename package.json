@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "deploy": "yarn build:production && git commit -am'build dist' && yarn gh-pages",
+    "deploy": "yarn build:production && git commit -am\"build-the-dist-dir\" && git push origin && yarn gh-pages",
     "gh-pages": "git push origin :gh-pages; git branch -D gh-pages; git subtree split --branch gh-pages --prefix dist/ && git push origin gh-pages",
     "build": "ember build",
     "build:production": "yarn build --environment=production",
