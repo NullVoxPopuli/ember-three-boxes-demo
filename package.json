@@ -14,7 +14,7 @@
     "deploy": "yarn build:production && git commit -am'build dist' && yarn gh-pages",
     "gh-pages": "git push origin :gh-pages; git branch -D gh-pages; git subtree split --branch gh-pages --prefix dist/ && git push origin gh-pages",
     "build": "ember build",
-    "build:production": "yarn buird --environment=production",
+    "build:production": "yarn build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
