@@ -2,11 +2,11 @@
   <label>
     Amount
     {{#let (array 20 100 200 500 1000 2000 10000) as |counts|}}
-      <XSelect @value={{this.appState.count}} @onChange={{this.updateCount}} as |x|>
+      <select {{on 'change' this.updateCount}}>
         {{#each counts as |count|}}
-          <x.option @value={{count}}>{{count}}</x.option>
+          <option value={{count}}>{{count}}</option>
         {{/each}}
-      </XSelect>
+      </select>
     {{/let}}
   </label>
 </div>

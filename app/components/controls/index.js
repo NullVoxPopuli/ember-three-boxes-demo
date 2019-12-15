@@ -6,7 +6,10 @@ export default class Controls extends Component {
   @service appState;
 
   @action
-  updateCount(newCount) {
+  updateCount(changeEvent) {
+    let value = changeEvent.target.value;
+    let newCount = parseInt(value);
+
     this.appState.updateCount(newCount);
 
     if (this.args.onUpdate) {

@@ -43,7 +43,6 @@
     "ember-resolver": "^6.0.0",
     "ember-source": "^3.15.0",
     "ember-template-lint": "^1.12.1",
-    "emberx-select": "github:adopted-ember-addons/emberx-select",
     "eslint": "^6.1.0",
     "eslint-plugin-ember": "^7.7.2",
     "eslint-plugin-node": "^10.0.0",

@@ -781,18 +781,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bigtest/convergence@^1.1.1":
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/@bigtest/convergence/-/convergence-1.1.2.tgz#1028f28378aae6876b3c07e577a2d4a320ad0acf"
-  integrity sha512-f/tpOfdd5p40Omejmc+jwrNL0nZ0RDV2LEQQdIWYHtMdKfQQRQpdAhyfNVPLuLeKHw5D9dUX8v9WOrwGsMBTAw==
-
-"@bigtest/interactor@^0.9.0":
-  version "0.9.3"
-  resolved "https://registry.npmjs.org/@bigtest/interactor/-/interactor-0.9.3.tgz#f83fa868fc5742a482114af15d22f50677d3a81f"
-  integrity sha512-MKbhp/j1TtlSp1kIM1btvPrMbxn1eW2Notd5oUChBtEpnm8FDAiZIg6LED1aTsUxyRWf2qb5RlJyoy9HZjRgzQ==
-  dependencies:
-    "@bigtest/convergence" "^1.1.1"
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -3827,7 +3815,7 @@ ember-assign-polyfill@^2.6.0:
     ember-cli-babel "^6.16.0"
     ember-cli-version-checker "^2.0.0"
 
-ember-auto-import@^1.2.15, ember-auto-import@^1.2.20:
+ember-auto-import@^1.2.20:
   version "1.5.3"
   resolved "https://registry.npmjs.org/ember-auto-import/-/ember-auto-import-1.5.3.tgz#b32936f874d1ed7057ad2ed3f6116357820be44b"
   integrity sha512-7JfdunM1BmLy/lyUXu7uEoi0Gi4+dxkGM23FgIEyW5g7z4MidhP53Fc61t49oPSnq7+J4lLpbH1f6C+mDMgb4A==
@@ -3973,16 +3961,6 @@ ember-cli-htmlbars-inline-precompile@^2.1.0:
     hash-for-dep "^1.2.3"
     heimdalljs-logger "^0.1.9"
     silent-error "^1.1.0"
-
-ember-cli-htmlbars@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/ember-cli-htmlbars/-/ember-cli-htmlbars-3.1.0.tgz#87806c2a0bca2ab52d4fb8af8e2215c1ca718a99"
-  integrity sha512-cgvRJM73IT0aePUG7oQ/afB7vSRBV3N0wu9BrWhHX2zkR7A7cUBI7KC9VPk6tbctCXoM7BRGsCC4aIjF7yrfXA==
-  dependencies:
-    broccoli-persistent-filter "^2.3.1"
-    hash-for-dep "^1.5.1"
-    json-stable-stringify "^1.0.1"
-    strip-bom "^3.0.0"
 
 ember-cli-htmlbars@^4.0.5, ember-cli-htmlbars@^4.2.0:
   version "4.2.0"
@@ -4409,15 +4387,6 @@ ember-test-waiters@^1.1.1:
   integrity sha512-ra71ZWTGBGLeDPa308aeAg9+/nYxv2fk4OEzmXdhvbSa5Dtbei94sr5pbLXx2IiK3Re2gDAvDzxg9PVhLy9fig==
   dependencies:
     ember-cli-babel "^7.1.2"
-
-"emberx-select@github:adopted-ember-addons/emberx-select":
-  version "4.0.0-beta.2"
-  resolved "https://codeload.github.com/adopted-ember-addons/emberx-select/tar.gz/bc5f7746ae67d13e17fe2bd118cbed99b0e10aa2"
-  dependencies:
-    "@bigtest/interactor" "^0.9.0"
-    ember-auto-import "^1.2.15"
-    ember-cli-babel "^6.16.0"
-    ember-cli-htmlbars "^3.0.0"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
