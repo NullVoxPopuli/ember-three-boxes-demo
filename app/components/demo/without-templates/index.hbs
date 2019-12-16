@@ -4,7 +4,7 @@
 <main>
   <EmberThreejs @onInit={{this.animate}} as |s|>
     <EmberThreejs::Lights::DirectionalLight
-      @scene={{s.scene}}
+      @parent={{s.scene}}
       @x={{-5}}
       @y={{0}}
       @z={{-10}}
@@ -18,7 +18,7 @@
     {{#each this.appState.rotations as |rotation|}}
       <EmberThreejs::Objects::Mesh
         @rotation={{rotation.r}}
-        @scene={{s.scene}}
+        @parent={{s.scene}}
         @material={{this.material}}
         @geometry={{this.geometry}}
       />

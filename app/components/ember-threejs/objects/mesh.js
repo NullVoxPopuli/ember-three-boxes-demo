@@ -1,31 +1,12 @@
-import { LifeCycleComponent } from 'ember-lifecycle-component';
 import THREE from 'three';
+import EmberObject3DComponent from '../core/ember-object-3d';
 
 
-export default class SceneMeshComponent extends LifeCycleComponent {
-
+export default class SceneMeshComponent extends EmberObject3DComponent {
   constructor(owner, args) {
     super(owner, args);
-
-    let { geometry, material, scene } = this.args;
-    this.mesh = new THREE.Mesh(geometry, material);
-    scene.add(this.mesh);
-    this.didReceiveArgs();
-  }
-
-  didReceiveArgs() {
-    let { rotation, position } = this.args;
-    if (rotation) {
-      this.mesh.rotation.set(rotation.x, rotation.y, rotation.z);
-    }
-
-    if (position) {
-      this.mesh.position.set(position.x, position.y, position.z);
-    }
-  }
-
-
-  willDestroy() {
-    this.args.scene.remove(this.mesh);
+    let { geometry, material } = this.args;
+    this.object3D = new THREE.Mesh(geometry, material);
+    this.init();
   }
 }
