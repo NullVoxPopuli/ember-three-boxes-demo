@@ -2,21 +2,21 @@
 <Controls @onUpdate={{this.onCountUpdate}} />
 
 <main>
-  <Demo::WithoutTemplates::Scene @onInit={{this.animate}} as |s|>
-    <Demo::WithoutTemplates::Scene::Lights::DirectionalLight
+  <EmberThreejs @onInit={{this.animate}} as |s|>
+    <EmberThreejs::Lights::DirectionalLight
       @scene={{s.scene}}
       @x={{-5}}
       @y={{0}}
       @z={{-10}}
     />
-    <Demo::WithoutTemplates::Scene::Cameras::PerspectiveCamera
+    <EmberThreejs::Cameras::PerspectiveCamera
       @z={{3.2}}
       @aspectRatio={{this.aspectRatio}}
       @emberSceneComponent={{s.emberSceneComponent}}
     />
 
     {{#each this.appState.rotations as |rotation|}}
-      <Demo::WithoutTemplates::Scene::Objects::Mesh
+      <EmberThreejs::Objects::Mesh
         @rotation={{rotation.r}}
         @scene={{s.scene}}
         @material={{this.material}}
@@ -24,5 +24,5 @@
       />
     {{/each}}
 
-  </Demo::WithoutTemplates::Scene>
+  </EmberThreejs>
 </main>
