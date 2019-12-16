@@ -49,6 +49,8 @@ export default class EmberObject3DComponent extends LifeCycleComponent {
   }
 
   willDestroy() {
-    this.args.scene.remove(this.mesh);
+    if (this._parent) {
+      this._parent.remove(this.object3D);
+    }
   }
 }
