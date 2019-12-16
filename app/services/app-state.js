@@ -5,7 +5,7 @@ import {newRotations} from '../utils/utils';
 import { tracked as pTracked, TrackedArray } from 'tracked-built-ins';
 
 export default class AppStateService extends Service {
-  @tracked count = 20;
+  @tracked count = 500;
 
   // @pTracked rotations = [];
   @tracked rotations = [];

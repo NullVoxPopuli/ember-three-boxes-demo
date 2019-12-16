@@ -6,9 +6,14 @@
     <s.DirectionalLight @x={{-5}} @y={{0}} @z={{-10}} />
     <s.PerspectiveCamera @z={{3.2}} @aspectRatio={{this.aspectRatio}} />
 
+
     {{#each this.appState.rotations as |rotation|}}
-      {{!-- <s.Box @rx={{rotation.x}} @ry={{rotation.y}} @rz={{rotation.z}} /> --}}
-      <s.Box @rotation={{rotation.r}} />
+      <Demo::WithoutTemplates::Scene::Objects::Mesh
+        @rotation={{rotation.r}}
+        @scene={{s.scene}}
+        @material={{this.material}}
+        @geometry={{this.geometry}}
+      />
     {{/each}}
 
   </Demo::WithoutTemplates::Scene>
