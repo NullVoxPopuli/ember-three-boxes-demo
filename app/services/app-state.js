@@ -24,6 +24,7 @@ export default class AppStateService extends Service {
       }
     }
 
+
     this.updateRotations();
   }
 
