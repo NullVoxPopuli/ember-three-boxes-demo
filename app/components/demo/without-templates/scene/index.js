@@ -5,6 +5,7 @@ import THREE from 'three';
 
 export default class SceneComponent extends LifeCycleComponent {
   element = undefined;
+  emberSceneComponent = undefined;
 
   constructor(owner, args) {
     super(owner, args);
@@ -12,6 +13,7 @@ export default class SceneComponent extends LifeCycleComponent {
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.emberSceneComponent = this;
   }
 
   @action

@@ -2,11 +2,8 @@
 
 {{yield
   (hash
-    DirectionalLight=(component 'demo/without-templates/scene/directional-light' scene=this.scene)
-    PerspectiveCamera=(component 'demo/without-templates/scene/perspective-camera'
-      scene=this.scene
-      setCamera=this.setCamera
-    )
     scene=this.scene
+    renderer=this.renderer
+    emberSceneComponent=this.emberSceneComponent
   )
 }}

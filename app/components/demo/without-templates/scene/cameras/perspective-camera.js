@@ -14,12 +14,13 @@ export default class ScenePerspectiveCameraComponent extends LifeCycleComponent 
   constructor(owner, args) {
     super(owner, args);
 
+    let { emberSceneComponent } = args;
     let options = { ...defaults, ...args };
     let { x, y, z, fov, aspectRatio, near, far } = options;
 
     this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
     this.camera.position.set(x, y, z);
 
-    args.setCamera(this.camera);
+    emberSceneComponent.setCamera(this.camera);
   }
 }
