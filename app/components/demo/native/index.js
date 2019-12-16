@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { throttle } from 'throttle-debounce';
 
 import { WebGlHelper } from './web-gl-helper';
 
@@ -13,27 +15,24 @@ function newRotations(num = 20) {
 }
 
 export default class DemoComponent extends Component {
-  @tracked count;
+  @service appState;
 
-  @tracked rotations = newRotations();
   @tracked fps = 0;
 
   @action
-  updateCount(newCount) {
-    this.count = newCount;
-    this.rotations = newRotations(this.count);
-
-    this.renderer.syncBoxes(this.rotations);
+  onUpdate() {
+    this.renderer.syncBoxes(newRotations(this.appState.count));
   }
 
   @action
   setup(element) {
     this.renderer = new WebGlHelper({
       container: element,
-      onFPSUpdate: (fps) => this.fps = fps,
+      onFPSUpdate: throttle(120, (fps) => this.fps = Math.round(fps)),
     });
 
     this.renderer.animate();
+    this.onUpdate();
   }
 }
 

@@ -1,4 +1,3 @@
-import { TrackedArray } from 'tracked-built-ins';
 import { tracked } from '@glimmer/tracking';
 
 export function avg(arr) {
@@ -10,17 +9,21 @@ export function random() {
 }
 
 class Rotation {
-  @tracked x = 0;
-  @tracked y = 0;
-  @tracked z = 0;
+  @tracked r = { x: 0, y: 0, z: 0 };
+  // @tracked x = 0;
+  // @tracked y = 0;
+  // @tracked z = 0;
 }
 
 export function newRotations(num = 20) {
   return Array(num).fill().map(() => {
     let r = new Rotation();
-    r.x = random();
-    r.y = random();
-    r.z = random();
+
+    r.r = {
+      x: random(),
+      y: random(),
+      z: random(),
+    };
 
     return r;
   });

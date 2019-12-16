@@ -7,7 +7,7 @@ let geometry = new THREE.BoxGeometry( 2, 2, 2 );
 let material = new THREE.MeshNormalMaterial();
 
 export class WebGlHelper {
-  frames = Array(60).fill(0); // for smoothing out FPS counter
+  frames = Array(10).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
   boxes = []; // references to all meshes
 
@@ -82,8 +82,8 @@ export class WebGlHelper {
       const elapsed = now - last;
 
       this.frames.shift();
-      this.frames[frames.length] = 1000 / elapsed;
-      this.onFPSUpdate(Math.round(avg(this.frames)));
+      this.frames.push(1000 / elapsed);
+      this.onFPSUpdate(avg(this.frames));
       last = now;
     }
 
@@ -93,5 +93,6 @@ export class WebGlHelper {
 
   willDestroy() {
     cancelAnimationFrame(this.frame);
+    this.scene.dispose();
   }
 }
