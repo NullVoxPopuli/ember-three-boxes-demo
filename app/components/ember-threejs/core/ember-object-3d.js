@@ -14,29 +14,35 @@ export default class EmberObject3DComponent extends LifeCycleComponent {
   }
 
   didReceiveArgs() {
-    let { rotation, position, parent } = this.args;
-    if (rotation) {
+    let { rotation, position, parent, scale } = this.args;
+    if (this._object3D && rotation) {
       this._object3D.rotation.set(rotation.x, rotation.y, rotation.z);
     }
 
-    if (position) {
+    if (this._object3D && position) {
       this._object3D.position.set(position.x, position.y, position.z);
     }
 
-    this.add(parent);
-  }
+    if (this._object3D && scale) {
+      this._object3D.scale.set(scale.x, scale.y, scale.z);
+    }
 
-  add(parent) {
-    if (parent && this._object3D) {
+    if (parent !== this._parent) {
+      this.remove(this._parent, this._object3D);
+      this.add(parent, this._object3D);
       this._parent = parent;
-      this._parent.add(this._object3D)
     }
   }
 
-  remove(parent) {
-    if (parent && this._object3D) {
-      this._parent.remove(this._object3D);
-      this._parent = undefined;
+  add(parent, object3D) {
+    if (parent && object3D) {
+      parent.add(object3D)
+    }
+  }
+
+  remove(parent, object3D) {
+    if (parent && object3D) {
+      parent.remove(object3D);
     }
   }
 
@@ -50,7 +56,7 @@ export default class EmberObject3DComponent extends LifeCycleComponent {
 
   willDestroy() {
     if (this._parent) {
-      this._parent.remove(this.object3D);
+      this.remove(this._parent, this.object3D);
     }
   }
 }

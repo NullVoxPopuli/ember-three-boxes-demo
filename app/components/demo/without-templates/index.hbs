@@ -10,14 +10,16 @@
       @z={{-10}}
     />
     <EmberThreejs::Cameras::PerspectiveCamera
-      @z={{3.2}}
+      @z={{6.2}}
       @aspectRatio={{this.aspectRatio}}
       @emberSceneComponent={{s.emberSceneComponent}}
     />
 
-    {{#each this.appState.rotations as |rotation|}}
+    {{#each this.appState.objectProperties as |properties|}}
       <EmberThreejs::Objects::Mesh
-        @rotation={{rotation.r}}
+        @rotation={{properties.r}}
+        @position={{properties.p}}
+        @scale={{properties.s}}
         @parent={{s.scene}}
         @material={{this.material}}
         @geometry={{this.geometry}}
