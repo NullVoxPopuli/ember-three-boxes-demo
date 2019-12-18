@@ -1,8 +1,3 @@
 <div {{did-insert this.insertElement}}></div>
 
-{{yield
-  (hash
-    scene=this.eThreeJsScene.scene
-    renderer=this.eThreeJsScene.renderer
-  )
-}}
+{{yield this.eThreeJsScene}}

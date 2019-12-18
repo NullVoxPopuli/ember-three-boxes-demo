@@ -1,6 +1,6 @@
 import THREE from 'three';
 import { inject as service } from '@ember/service';
-import EmberObject3DComponent from '../core/ember-object-3d';
+import ObjectProxy from '../utils/object-proxy';
 
 const defaults = {
   fov: 75,
@@ -11,7 +11,7 @@ const defaults = {
   z: 0,
 };
 
-export default class ScenePerspectiveCameraComponent extends EmberObject3DComponent {
+export default class ScenePerspectiveCameraComponent extends ObjectProxy {
 
   @service('e-threejs/scene')
   sceneService;

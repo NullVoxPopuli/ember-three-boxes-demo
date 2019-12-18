@@ -2,10 +2,14 @@ import THREE from 'three';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import Stats from 'stats.js';
+import { tracked } from '@glimmer/tracking';
+
 export default class DemoComponent extends Component {
 
   @service appState;
   @service('e-threejs/scene') sceneService;
+
+  @tracked containerRotation = new THREE.Euler();
 
   counter = 0;
   cameraPosition = new THREE.Vector3(0, 0, 6.2);
@@ -33,6 +37,9 @@ export default class DemoComponent extends Component {
 
   render() {
     let { objectProperties }  = this.appState;
+
+    this.containerRotation.y += 0.045;
+    this.containerRotation = this.containerRotation;
 
     let radius = 0.085;
     for (let i = 0; i < objectProperties.length; i++) {

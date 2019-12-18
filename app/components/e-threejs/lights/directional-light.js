@@ -1,8 +1,8 @@
-import EmberObject3DComponent from '../core/ember-object-3d';
+import ObjectProxy from '../utils/object-proxy';
 import THREE from 'three';
 
 
-export default class SceneDirectionalLightComponent extends EmberObject3DComponent {
+export default class SceneDirectionalLightComponent extends ObjectProxy {
   constructor(owner, args) {
     super(owner, args);
     let { x, y, z } = args;

@@ -10,15 +10,21 @@
       @position={{this.cameraPosition}}
       @aspectRatio={{this.aspectRatio}}
     />
-    {{#each this.appState.objectProperties as |properties|}}
-      <EThreejs::Objects::Mesh
-        @rotation={{properties.r}}
-        @position={{properties.p}}
-        @scale={{properties.s}}
-        @parent={{s.scene}}
-        @material={{this.material}}
-        @geometry={{this.geometry}}
-      />
-    {{/each}}
+    <EThreejs::Core::Object3d
+      @parent={{s.scene}}
+      @rotation={{this.containerRotation}}
+      as |meshContainer|
+    >
+      {{#each this.appState.objectProperties as |properties|}}
+        <EThreejs::Objects::Mesh
+          @rotation={{properties.r}}
+          @position={{properties.p}}
+          @scale={{properties.s}}
+          @parent={{meshContainer}}
+          @material={{this.material}}
+          @geometry={{this.geometry}}
+        />
+      {{/each}}
+    </EThreejs::Core::Object3d>
   </EThreejs>
 </main>
