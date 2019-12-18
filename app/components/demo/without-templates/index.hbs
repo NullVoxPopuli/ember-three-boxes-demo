@@ -1,8 +1,7 @@
-<Info @fps={{this.fps}} />
 <Controls @onUpdate={{this.onCountUpdate}} />
 
 <main>
-  <EThreejs @onInit={{this.animate}} as |s|>
+  <EThreejs @id={{this.sceneId}} as |s|>
     <EThreejs::Lights::DirectionalLight
       @parent={{s.scene}}
       @x={{-5}}
@@ -14,7 +13,6 @@
       @aspectRatio={{this.aspectRatio}}
       @emberSceneComponent={{s.emberSceneComponent}}
     />
-
     {{#each this.appState.objectProperties as |properties|}}
       <EThreejs::Objects::Mesh
         @rotation={{properties.r}}
@@ -25,6 +23,5 @@
         @geometry={{this.geometry}}
       />
     {{/each}}
-
   </EThreejs>
 </main>

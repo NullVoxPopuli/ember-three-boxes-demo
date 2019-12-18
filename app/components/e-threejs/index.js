@@ -1,46 +1,32 @@
 import { LifeCycleComponent } from 'ember-lifecycle-component';
 import { action } from '@ember/object';
-
-import THREE from 'three';
+import { inject as service } from '@ember/service';
 
 export default class SceneComponent extends LifeCycleComponent {
   element = undefined;
-  emberSceneComponent = undefined;
+  eThreeJsScene = undefined;
+
+  @service('e-threejs/scene')
+  sceneService;
 
   constructor(owner, args) {
     super(owner, args);
-
-    this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.emberSceneComponent = this; // TODO: clean up
+    this.eThreeJsScene = this.sceneService.get(this.args.id);
   }
 
   @action
-  setElement(element) {
+  insertElement(element) {
     this.element = element;
-    this.element.appendChild(this.renderer.domElement);
-
-    if (this.camera) {
-      this.args.onInit(this.render);
-    }
+    this.element.appendChild(this.eThreeJsScene.domElement);
+    this.eThreeJsScene.start();
   }
 
   @action
   setCamera(camera) {
-    this.camera = camera;
-
-    if (this.element) {
-      this.args.onInit(this.render);
-    }
-  }
-
-  @action
-  render() {
-    this.renderer.render(this.scene, this.camera);
+    this.eThreeJsScene.setCamera(camera);
   }
 
   willDestroy() {
-    this.scene.dispose();
+    this.eThreeJsScene.dispose();
   }
 }

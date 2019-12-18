@@ -1,7 +1,7 @@
 <div class='controls'>
   <label>
     Amount
-    {{#let (array 250 500 1000 2000 10000) as |counts|}}
+    {{#let (array 100 250 500 1000 2000 10000) as |counts|}}
       <select {{on 'change' this.updateCount}}>
         {{#each counts as |count|}}
           <option
