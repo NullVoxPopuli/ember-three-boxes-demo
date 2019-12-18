@@ -6,9 +6,6 @@ const defaults = {
   fov: 75,
   near: 0.1,
   far: 1000,
-  x: 0,
-  y: 0,
-  z: 0,
 };
 
 export default class ScenePerspectiveCameraComponent extends ObjectProxy {
@@ -21,12 +18,10 @@ export default class ScenePerspectiveCameraComponent extends ObjectProxy {
 
     let options = { ...defaults, ...args };
     let { fov, aspectRatio, near, far } = options;
+    let scene = this.sceneService.getDefaultScene();
 
     this.object3D = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-
-    let scene = this.sceneService.getDefaultScene();
     scene.setCamera(this.object3D);
-
     this.init();
   }
 }
