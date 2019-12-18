@@ -4,7 +4,7 @@ import qs from 'qs';
 import { newProperties } from '../utils/utils';
 
 export default class AppStateService extends Service {
-  @tracked count = 100;
+  @tracked count = 250;
   @tracked objectProperties = [];
 
   constructor() {

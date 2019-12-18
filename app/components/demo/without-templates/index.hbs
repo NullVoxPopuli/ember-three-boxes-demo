@@ -2,21 +2,21 @@
 <Controls @onUpdate={{this.onCountUpdate}} />
 
 <main>
-  <EmberThreejs @onInit={{this.animate}} as |s|>
-    <EmberThreejs::Lights::DirectionalLight
+  <EThreejs @onInit={{this.animate}} as |s|>
+    <EThreejs::Lights::DirectionalLight
       @parent={{s.scene}}
       @x={{-5}}
       @y={{0}}
       @z={{-10}}
     />
-    <EmberThreejs::Cameras::PerspectiveCamera
+    <EThreejs::Cameras::PerspectiveCamera
       @z={{6.2}}
       @aspectRatio={{this.aspectRatio}}
       @emberSceneComponent={{s.emberSceneComponent}}
     />
 
     {{#each this.appState.objectProperties as |properties|}}
-      <EmberThreejs::Objects::Mesh
+      <EThreejs::Objects::Mesh
         @rotation={{properties.r}}
         @position={{properties.p}}
         @scale={{properties.s}}
@@ -26,5 +26,5 @@
       />
     {{/each}}
 
-  </EmberThreejs>
+  </EThreejs>
 </main>
