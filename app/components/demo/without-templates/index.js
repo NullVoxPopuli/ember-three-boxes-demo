@@ -8,6 +8,8 @@ export default class DemoComponent extends Component {
   @service('e-threejs/scene') sceneService;
 
   counter = 0;
+  cameraPosition = new THREE.Vector3(0, 0, 6.2);
+  lightPosition = new THREE.Vector3(-5, 0, 10);
   geometry = new THREE.BoxGeometry( 2, 2, 2 );
   material = new THREE.MeshNormalMaterial();
   sceneId = "ember-threejs-demo";
@@ -53,9 +55,5 @@ export default class DemoComponent extends Component {
 
     }
     this.counter += 0.05;
-  }
-
-  willDestroy() {
-    cancelAnimationFrame(this.frame);
   }
 }

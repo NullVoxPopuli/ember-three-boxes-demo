@@ -1,11 +1,8 @@
 <div {{did-insert this.insertElement}}></div>
 
-{{!-- TODO: cleanup emberSceneComponent --}}
-
 {{yield
   (hash
     scene=this.eThreeJsScene.scene
     renderer=this.eThreeJsScene.renderer
-    emberSceneComponent=this.eThreeJsScene
   )
 }}

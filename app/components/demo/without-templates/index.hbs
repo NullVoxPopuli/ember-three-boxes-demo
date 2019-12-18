@@ -4,14 +4,11 @@
   <EThreejs @id={{this.sceneId}} as |s|>
     <EThreejs::Lights::DirectionalLight
       @parent={{s.scene}}
-      @x={{-5}}
-      @y={{0}}
-      @z={{-10}}
+      @position={{this.lightPosition}}
     />
     <EThreejs::Cameras::PerspectiveCamera
-      @z={{6.2}}
+      @position={{this.cameraPosition}}
       @aspectRatio={{this.aspectRatio}}
-      @emberSceneComponent={{s.emberSceneComponent}}
     />
     {{#each this.appState.objectProperties as |properties|}}
       <EThreejs::Objects::Mesh

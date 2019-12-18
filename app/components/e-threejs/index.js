@@ -27,6 +27,6 @@ export default class SceneComponent extends LifeCycleComponent {
   }
 
   willDestroy() {
-    this.eThreeJsScene.dispose();
+    this.sceneService.dispose(this.args.id);
   }
 }

@@ -1,5 +1,6 @@
-import { LifeCycleComponent } from 'ember-lifecycle-component';
 import THREE from 'three';
+import { inject as service } from '@ember/service';
+import EmberObject3DComponent from '../core/ember-object-3d';
 
 const defaults = {
   fov: 75,
@@ -10,17 +11,22 @@ const defaults = {
   z: 0,
 };
 
-export default class ScenePerspectiveCameraComponent extends LifeCycleComponent {
+export default class ScenePerspectiveCameraComponent extends EmberObject3DComponent {
+
+  @service('e-threejs/scene')
+  sceneService;
+
   constructor(owner, args) {
     super(owner, args);
 
-    let { emberSceneComponent } = args;
     let options = { ...defaults, ...args };
-    let { x, y, z, fov, aspectRatio, near, far } = options;
+    let { fov, aspectRatio, near, far } = options;
 
-    this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-    this.camera.position.set(x, y, z);
+    this.object3D = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
 
-    emberSceneComponent.setCamera(this.camera);
+    let scene = this.sceneService.getDefaultScene();
+    scene.setCamera(this.object3D);
+
+    this.init();
   }
 }

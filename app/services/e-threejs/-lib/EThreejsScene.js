@@ -62,8 +62,9 @@ export default class EThreeJSScene {
     }
   }
 
-  destroy() {
+  dispose() {
     this.scene.dispose();
+    this.stop();
   }
 
   get domElement() {
