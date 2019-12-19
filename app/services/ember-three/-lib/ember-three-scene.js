@@ -1,4 +1,4 @@
-import { RequestAnimationFrame } from './RequestAnimationFrame';
+import { RequestAnimationFrame } from './request-animation-frame';
 import THREE from 'three';
 
 const DEFAULT_RENDERER_PARAMS = {
@@ -7,7 +7,7 @@ const DEFAULT_RENDERER_PARAMS = {
   clearColor: 0xFFFFFF,
 };
 
-export default class EThreeJSScene {
+export default class EmberThreeScene {
   scene = undefined;
   renderer = undefined;
   raf = undefined;

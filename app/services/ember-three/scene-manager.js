@@ -1,7 +1,7 @@
 import Service from '@ember/service';
-import EThreeJSScene from './-lib/EThreejsScene';
+import EmberThreeScene from './-lib/ember-three-scene';
 
-export default class EThreeJSSceneService extends Service {
+export default class EmberThreeSceneManager extends Service {
 
   constructor() {
     super(...arguments);
@@ -9,33 +9,33 @@ export default class EThreeJSSceneService extends Service {
 
   getDefaultScene(id = undefined) {
     if (id === undefined) {
-      let keys = Object.keys(EThreeJSSceneService._scenes);
+      let keys = Object.keys(EmberThreeSceneManager._scenes);
       if (keys.length > 1) {
         console.warn('At the moment we only support a single three js scene');
       }
 
-      return EThreeJSSceneService._scenes[keys[0]];
+      return EmberThreeSceneManager._scenes[keys[0]];
     }
 
-    return EThreeJSSceneService._scenes[id];
+    return EmberThreeSceneManager._scenes[id];
   }
 
   get(id, { rendererParams = undefined } = {}) {
-    let scene = EThreeJSSceneService._scenes[id];
+    let scene = EmberThreeSceneManager._scenes[id];
     if (!scene) {
-      EThreeJSSceneService._scenes[id] = new EThreeJSScene({ rendererParams });
+      EmberThreeSceneManager._scenes[id] = new EmberThreeScene({ rendererParams });
     }
 
-    return EThreeJSSceneService._scenes[id];
+    return EmberThreeSceneManager._scenes[id];
   }
 
   dispose(id) {
-    let scene = EThreeJSSceneService._scenes[id];
+    let scene = EmberThreeSceneManager._scenes[id];
     if (scene) {
       scene.dispose();
-     delete EThreeJSSceneService._scenes[id];
+     delete EmberThreeSceneManager._scenes[id];
     }
   }
 }
 
-EThreeJSSceneService._scenes = {};
+EmberThreeSceneManager._scenes = {};
