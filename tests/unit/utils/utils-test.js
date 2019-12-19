@@ -1,4 +1,4 @@
-import utils from 'ember-three-boxes-demo/utils/utils';
+import utils from 'ember-three-components/utils/utils';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | utils', function() {

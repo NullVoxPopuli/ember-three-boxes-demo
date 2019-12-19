@@ -1,8 +1,8 @@
 {
-  "name": "ember-three-boxes-demo",
+  "name": "ember-three-components",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ember-three-boxes-demo goes here",
+  "description": "Small description for ember-three-components goes here",
   "repository": "",
   "license": "MIT",
   "author": "",

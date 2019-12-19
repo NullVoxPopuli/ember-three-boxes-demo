@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ember-three-boxes-demo',
+    modulePrefix: 'ember-three-components',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -48,7 +48,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/ember-three-boxes-demo/';
+    ENV.rootURL = '/ember-three-components/';
     // here you can enable a production-specific feature
   }
 
