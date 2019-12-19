@@ -1,5 +1,3 @@
-<EmberThreeDemo::Demos::Controls::Cube @onUpdate={{this.onCountUpdate}} />
-
 <main {{will-destroy this.destroyElement}}>
   <EmberThree @id={{this.sceneId}} as |s|>
     <EmberThree::Lights::DirectionalLight
@@ -28,3 +26,5 @@
     </EmberThree::Core::Object3d>
   </EmberThree>
 </main>
+
+<EmberThreeDemo::Demos::Controls::Cube @onUpdate={{this.onCountUpdate}}/>
