@@ -16,7 +16,10 @@ export default class DemoComponent extends Component {
   lightPosition = new THREE.Vector3(-5, 0, 10);
   geometry = new THREE.BoxGeometry(2, 2, 2);
   material = new THREE.MeshNormalMaterial();
-  sceneId = 'ember-threejs-demo';
+  rendererParams = {
+    clearColor: 0xffffff,
+  };
+  sceneId = 'ember-threejs-cubes-demo';
   state = undefined;
 
   constructor() {

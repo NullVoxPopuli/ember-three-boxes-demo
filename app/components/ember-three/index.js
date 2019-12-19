@@ -12,7 +12,7 @@ export default class SceneComponent extends LifeCycleComponent {
   constructor(owner, args) {
     super(owner, args);
     let { id, rendererParams } = this.args;
-    this.eThreeJsScene = this.sceneManager.get(id, rendererParams);
+    this.eThreeJsScene = this.sceneManager.get(id, { rendererParams });
   }
 
   @action

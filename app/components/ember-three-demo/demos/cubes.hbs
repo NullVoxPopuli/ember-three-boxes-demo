@@ -1,5 +1,9 @@
 <main {{will-destroy this.destroyElement}}>
-  <EmberThree @id={{this.sceneId}} as |s|>
+  <EmberThree
+    @id={{this.sceneId}}
+    @rendererParams={{this.rendererParams}}
+    as |s|
+  >
     <EmberThree::Lights::DirectionalLight
       @parent={{s.scene}}
       @position={{this.lightPosition}}

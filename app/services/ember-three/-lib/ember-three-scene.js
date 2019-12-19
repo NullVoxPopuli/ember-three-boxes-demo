@@ -17,15 +17,21 @@ export default class EmberThreeScene {
   parentElement = undefined;
 
   constructor({ rendererParams = {} } = {}) {
-    let rendererProps = { ...rendererParams, ...DEFAULT_RENDERER_PARAMS };
-
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer(rendererProps);
-    this.renderer.setClearColor(rendererProps.clearColor);
+    this.updateRenderer({ rendererParams });
     this.resizeEventDelegate = () => this.resize();
     this.raf = new RequestAnimationFrame(this.render, this);
   }
 
+  updateRenderer({ rendererParams }) {
+    if (this.renderer) {
+      this.renderer.dispose();
+    }
+
+    let rendererProps = { ...DEFAULT_RENDERER_PARAMS, ...rendererParams };
+    this.renderer = new THREE.WebGLRenderer(rendererProps);
+    this.renderer.setClearColor(rendererParams.clearColor);
+  }
   start() {
     this.raf.start();
   }

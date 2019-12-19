@@ -12,9 +12,12 @@ export default class DemoComponent extends Component {
   counter = 0;
   cameraPosition = new THREE.Vector3(0, 0, 14.2);
   lightPosition = new THREE.Vector3(-5, 0, 10);
-  lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
-  sceneId = 'ember-threejs-demo';
+  lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+  sceneId = 'ember-threejs-lines-demo';
   state = undefined;
+  rendererParams = {
+    clearColor: 0x000000,
+  };
 
   constructor() {
     super(...arguments);

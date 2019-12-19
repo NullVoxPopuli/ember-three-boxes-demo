@@ -1,5 +1,6 @@
 import Service from '@ember/service';
 import EmberThreeScene from './-lib/ember-three-scene';
+import { isPresent } from '@ember/utils';
 
 export default class EmberThreeSceneManager extends Service {
   constructor() {
@@ -23,6 +24,8 @@ export default class EmberThreeSceneManager extends Service {
     let scene = EmberThreeSceneManager._scenes[id];
     if (!scene) {
       EmberThreeSceneManager._scenes[id] = new EmberThreeScene({ rendererParams });
+    } else if (isPresent(rendererParams)) {
+      scene.updateRenderer({ rendererParams });
     }
 
     return EmberThreeSceneManager._scenes[id];
