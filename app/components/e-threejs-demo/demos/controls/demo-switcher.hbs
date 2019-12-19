@@ -1,0 +1,15 @@
+<div class='demo-selector-controls'>
+  <label>
+    Demo selector
+      <select {{on 'change' @onSelectDemo}}>
+        {{#each this.demoList as |demoListItem|}}
+          <option
+            selected={{eq this.selectedDemoListItem demoListItem}}
+            value={{demoListItem}}
+          >
+            {{demoListItem}}
+          </option>
+        {{/each}}
+      </select>
+  </label>
+</div>

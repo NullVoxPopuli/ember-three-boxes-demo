@@ -1,0 +1,27 @@
+<main {{will-destroy this.destroyElement}}>
+  <EThreejs @id={{this.sceneId}} as |s|>
+    <EThreejs::Lights::DirectionalLight
+      @parent={{s.scene}}
+      @position={{this.lightPosition}}
+    />
+    <EThreejs::Cameras::PerspectiveCamera
+      @position={{this.cameraPosition}}
+      @aspectRatio={{this.aspectRatio}}
+    />
+    <EThreejs::Core::Object3d
+      @parent={{s.scene}}
+      @rotation={{this.containerRotation}}
+      as |lineContainer|
+    >
+      {{#each this.lineSegmentsData as |segmentData|}}
+        <EThreejs::Objects::LineSegments
+          @parent={{lineContainer}}
+          @geometry={{segmentData.geometry}}
+          @scale={{segmentData.scale}}
+          @material={{this.lineMaterial}}
+        />
+        {{log geometry}}
+      {{/each}}
+    </EThreejs::Core::Object3d>
+  </EThreejs>
+</main>
