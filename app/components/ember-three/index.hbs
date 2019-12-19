@@ -1,8 +1,7 @@
-<div class="e-three-js-container">
-  <div class="e-three-js"
-    {{did-insert this.insertElement}}
-    {{will-destroy this.destroyElement}}
-  ></div>
+<div class="ember-three-container"
+  {{did-insert this.onInsertElement}}
+  {{will-destroy this.onDestroyElement}}
+>
 </div>
 
 {{yield this.eThreeJsScene}}

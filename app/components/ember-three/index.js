@@ -16,15 +16,14 @@ export default class SceneComponent extends LifeCycleComponent {
   }
 
   @action
-  insertElement(element) {
+  onInsertElement(element) {
     this.element = element;
-    this.element.appendChild(this.eThreeJsScene.domElement);
+    this.eThreeJsScene.onInsertElement(this.element);
     this.eThreeJsScene.start();
   }
 
   @action
-  destroyElement() {
-    this.element.removeChild(this.eThreeJsScene.domElement);
+  onDestroyElement() {
     this.sceneManager.dispose(this.args.id);
   }
 }

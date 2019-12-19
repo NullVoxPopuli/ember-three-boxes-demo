@@ -8,17 +8,17 @@ const DEFAULT_RENDERER_PARAMS = {
 };
 
 export default class EmberThreeScene {
-  scene = undefined;
-  renderer = undefined;
-  raf = undefined;
-  frameTime = 16;
   frameAcc = 0;
-  stats = undefined;
+  frameTime = 16;
   preRenderCallback = {
     fnc: undefined,
     scope: undefined,
   };
-
+  raf = undefined;
+  renderer = undefined;
+  scene = undefined;
+  stats = undefined;
+  parentElement = undefined;
 
   constructor({ rendererParams = {} } = {}) {
     let rendererProps = { ...rendererParams, ... DEFAULT_RENDERER_PARAMS };
@@ -26,7 +26,7 @@ export default class EmberThreeScene {
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer(rendererProps);
     this.renderer.setClearColor(rendererProps.clearColor);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.resizeEventDelegate = () => this.resize();
     this.raf = new RequestAnimationFrame(this.render, this);
   }
 
@@ -47,6 +47,7 @@ export default class EmberThreeScene {
 
   setCamera(camera) {
     this.camera = camera;
+    this.resize();
   }
 
   setStats(stats) {
@@ -57,7 +58,9 @@ export default class EmberThreeScene {
     if (this.stats) {
       this.stats.begin();
     }
+
     this.frameAcc += dt;
+
     if (this.frameAcc > this.frameTime) {
       if (this.preRenderCallback.fnc) {
         this.preRenderCallback.fnc.apply(this.preRenderCallback.scope);
@@ -72,13 +75,43 @@ export default class EmberThreeScene {
   }
 
   dispose() {
+    window.removeEventListener('resize', this.resizeEventDelegate);
+    this.parentElement.removeChild(this.domElement);
     this.stop();
     this.scene.dispose();
     this.renderer.dispose();
     this.preRenderCallback = undefined;
   }
 
+  resize() {
+    if (!this.parentElement) {
+      return;
+    }
+
+    this.renderer.setSize(this.parentWidth, this.parentHeight);
+    if (this.camera) {
+      this.camera.aspect = this.parentWidth / this.parentHeight;
+      this.camera.updateProjectionMatrix();
+    }
+  }
+
+  onInsertElement(parentElement) {
+    this.parentElement = parentElement;
+    this.parentElement.appendChild(this.domElement);
+    this.resize();
+
+    window.removeEventListener('resize', this.resizeEventDelegate);
+    window.addEventListener('resize', this.resizeEventDelegate);
+  }
+
   get domElement() {
     return this.renderer.domElement;
+  }
+
+  get parentHeight() {
+    return this.parentElement.offsetHeight;
+  }
+  get parentWidth() {
+    return this.parentElement.offsetWidth;
   }
 }
