@@ -1,5 +1,5 @@
-<Controls @onUpdate={{this.onCountUpdate}} />
+<EThreejsDemo::Demos::Controls::DemoSwitcher @onSelectDemo={{this.onSelectDemo}} />
 
 <main>
- <EThreejsDemo::Demos::Lines/>
+  {{component (concat 'e-threejs-demo/demos/' this.selectedDemo)}}
 </main>

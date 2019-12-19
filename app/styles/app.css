@@ -22,9 +22,14 @@ nav a {
   text-decoration: none;
   text-align: right;
 }
-.controls {
+.demo-selector-controls {
   position: fixed;
   top: 1em;
+  right: 1em;
+}
+.controls {
+  position: fixed;
+  top: 3em;
   right: 1em;
 }
 .info {
