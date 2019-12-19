@@ -6,7 +6,6 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class DemoComponent extends Component {
-
   @service appState;
   @service('ember-three/scene-manager') sceneManager;
 
@@ -15,25 +14,25 @@ export default class DemoComponent extends Component {
   counter = 0;
   cameraPosition = new THREE.Vector3(0, 0, 6.2);
   lightPosition = new THREE.Vector3(-5, 0, 10);
-  geometry = new THREE.BoxGeometry( 2, 2, 2 );
+  geometry = new THREE.BoxGeometry(2, 2, 2);
   material = new THREE.MeshNormalMaterial();
-  sceneId = "ember-threejs-demo";
+  sceneId = 'ember-threejs-demo';
   state = undefined;
 
   constructor() {
     super(...arguments);
 
     this.stats = new Stats();
-    document.body.appendChild( this.stats.dom );
+    document.body.appendChild(this.stats.dom);
 
     // TODO: fix this is not ideal, but for now it gets us a single RAF loop
     let scene = this.sceneManager.get(this.sceneId);
-    scene.addPreRenderCallback(this.render, this);
+    scene.addRafCallback(this.render, this);
     scene.setStats(this.stats);
   }
 
   render() {
-    let { objectProperties }  = this.appState;
+    let { objectProperties } = this.appState;
 
     this.containerRotation.y += 0.045;
     this.containerRotation = this.containerRotation;
@@ -56,13 +55,12 @@ export default class DemoComponent extends Component {
       property.s = property.s;
       property.p = property.p;
       property.r = property.r;
-
     }
     this.counter += 0.05;
   }
 
   @action
   destroyElement() {
-    document.body.removeChild( this.stats.dom );
+    document.body.removeChild(this.stats.dom);
   }
 }

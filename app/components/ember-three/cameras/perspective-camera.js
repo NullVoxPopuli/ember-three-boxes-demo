@@ -9,7 +9,6 @@ const defaults = {
 };
 
 export default class ScenePerspectiveCameraComponent extends ObjectProxy {
-
   @service('ember-three/scene-manager')
   sceneManager;
 

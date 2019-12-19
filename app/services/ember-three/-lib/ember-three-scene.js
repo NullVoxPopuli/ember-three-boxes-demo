@@ -4,16 +4,12 @@ import THREE from 'three';
 const DEFAULT_RENDERER_PARAMS = {
   alpha: false,
   antialias: true,
-  clearColor: 0xFFFFFF,
+  clearColor: 0xffffff,
 };
 
 export default class EmberThreeScene {
   frameAcc = 0;
   frameTime = 16;
-  preRenderCallback = {
-    fnc: undefined,
-    scope: undefined,
-  };
   raf = undefined;
   renderer = undefined;
   scene = undefined;
@@ -21,7 +17,7 @@ export default class EmberThreeScene {
   parentElement = undefined;
 
   constructor({ rendererParams = {} } = {}) {
-    let rendererProps = { ...rendererParams, ... DEFAULT_RENDERER_PARAMS };
+    let rendererProps = { ...rendererParams, ...DEFAULT_RENDERER_PARAMS };
 
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer(rendererProps);
@@ -38,11 +34,8 @@ export default class EmberThreeScene {
     this.raf.stop();
   }
 
-  addPreRenderCallback(fnc, scope) {
-    this.preRenderCallback = {
-      fnc,
-      scope,
-    }
+  addRafCallback(callbackFunction, context) {
+    this.raf.addCallback(callbackFunction, context);
   }
 
   setCamera(camera) {
@@ -62,9 +55,6 @@ export default class EmberThreeScene {
     this.frameAcc += dt;
 
     if (this.frameAcc > this.frameTime) {
-      if (this.preRenderCallback.fnc) {
-        this.preRenderCallback.fnc.apply(this.preRenderCallback.scope);
-      }
       this.frameAcc = 0;
       this.renderer.render(this.scene, this.camera);
     }

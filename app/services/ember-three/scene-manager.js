@@ -2,7 +2,6 @@ import Service from '@ember/service';
 import EmberThreeScene from './-lib/ember-three-scene';
 
 export default class EmberThreeSceneManager extends Service {
-
   constructor() {
     super(...arguments);
   }
@@ -33,7 +32,7 @@ export default class EmberThreeSceneManager extends Service {
     let scene = EmberThreeSceneManager._scenes[id];
     if (scene) {
       scene.dispose();
-     delete EmberThreeSceneManager._scenes[id];
+      delete EmberThreeSceneManager._scenes[id];
     }
   }
 }

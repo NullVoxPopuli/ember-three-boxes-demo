@@ -1,7 +1,6 @@
 import ObjectProxy from '../utils/object-proxy';
 import THREE from 'three';
 
-
 export default class SceneDirectionalLightComponent extends ObjectProxy {
   constructor(owner, args) {
     super(owner, args);

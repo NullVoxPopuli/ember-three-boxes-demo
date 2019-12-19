@@ -1,8 +1,10 @@
 export class RequestAnimationFrame {
+  _active = false;
+  _argsArray = [];
+  _listeners = [];
+
   constructor(callback, callbackContext) {
-    this._active = false;
-    this._argsArray = [];
-    this.setCallback(callback, callbackContext);
+    this.addCallback(callback, callbackContext);
     this._rafUpdateFunction = () => {
       if (this._active) {
         this._tick();
@@ -12,9 +14,8 @@ export class RequestAnimationFrame {
     this._argsArray.push(this._dt);
   }
 
-  setCallback(callback, callbackContext) {
-    this._callback = callback;
-    this._callbackContext = callbackContext;
+  addCallback(callbackFunction, context) {
+    this._listeners.push({ callbackFunction, context });
   }
 
   start() {
@@ -31,8 +32,7 @@ export class RequestAnimationFrame {
     this.stop();
     this._active = null;
     this._argsArray = null;
-    this._callback = null;
-    this._callbackContext = null;
+    this._listeners = null;
   }
 
   stop() {
@@ -48,8 +48,12 @@ export class RequestAnimationFrame {
     this._dt = this._currentTime - this._prevTime;
     this._argsArray[0] = this._dt;
 
-    // spread operator shims are slower than apply.
-    this._callback.apply(this._callbackContext, this._argsArray);
+    let { length } = this._listeners;
+    for (let c = 0; c < length; c++) {
+      let { callbackFunction, context } = this._listeners[c];
+      callbackFunction.apply(context, this._argsArray);
+    }
+
     requestAnimationFrame(this._rafUpdateFunction);
     this._prevTime = this._currentTime;
   }

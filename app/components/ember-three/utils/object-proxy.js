@@ -1,7 +1,6 @@
 import { LifeCycleComponent } from 'ember-lifecycle-component';
 
 export default class EmberObject3DComponent extends LifeCycleComponent {
-
   _parent = undefined;
   _object3D = undefined;
 
@@ -36,7 +35,7 @@ export default class EmberObject3DComponent extends LifeCycleComponent {
 
   add(parent, object3D) {
     if (parent && object3D) {
-      parent.add(object3D)
+      parent.add(object3D);
     }
   }
 

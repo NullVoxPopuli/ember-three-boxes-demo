@@ -6,7 +6,6 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class DemoComponent extends Component {
-
   @service('ember-three/scene-manager') sceneManager;
   @tracked containerRotation = new THREE.Euler();
 
@@ -14,35 +13,42 @@ export default class DemoComponent extends Component {
   cameraPosition = new THREE.Vector3(0, 0, 14.2);
   lightPosition = new THREE.Vector3(-5, 0, 10);
   lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
-  sceneId = "ember-threejs-demo";
+  sceneId = 'ember-threejs-demo';
   state = undefined;
 
   constructor() {
     super(...arguments);
     this.stats = new Stats();
-    document.body.appendChild( this.stats.dom );
+    document.body.appendChild(this.stats.dom);
     let scene = this.sceneManager.get(this.sceneId);
-    scene.addPreRenderCallback(this.render, this);
+    scene.addRafCallback(this.render, this);
     scene.setStats(this.stats);
 
-    this._lineGeometries = [this.createGeometry(), this.createGeometry(), this.createGeometry(),this.createGeometry(),this.createGeometry(),this.createGeometry()];
+    this._lineGeometries = [
+      this.createGeometry(),
+      this.createGeometry(),
+      this.createGeometry(),
+      this.createGeometry(),
+      this.createGeometry(),
+      this.createGeometry(),
+    ];
   }
 
   createGeometry() {
     let geometry = new THREE.BufferGeometry();
     let vertices = [];
     let vertex = new THREE.Vector3();
-    for (let i = 0; i < 1500; i ++ ) {
+    for (let i = 0; i < 1500; i++) {
       vertex.x = Math.random() * 2 - 1;
       vertex.y = Math.random() * 2 - 1;
       vertex.z = Math.random() * 2 - 1;
       vertex.normalize();
-      vertex.multiplyScalar( 10 );
-      vertices.push( vertex.x, vertex.y, vertex.z );
-      vertex.multiplyScalar( Math.random() * 0.09 + 1 );
-      vertices.push( vertex.x, vertex.y, vertex.z );
+      vertex.multiplyScalar(10);
+      vertices.push(vertex.x, vertex.y, vertex.z);
+      vertex.multiplyScalar(Math.random() * 0.09 + 1);
+      vertices.push(vertex.x, vertex.y, vertex.z);
     }
-    geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
     return geometry;
   }
 
@@ -54,18 +60,18 @@ export default class DemoComponent extends Component {
 
   get lineSegmentsData() {
     let scale = 0;
-    return this._lineGeometries.map((geometry) => {
+    return this._lineGeometries.map(geometry => {
       scale += 0.2;
       return {
         geometry,
         scale: new THREE.Vector3(scale, scale, scale),
-      }
+      };
     });
   }
 
   @action
   destroyElement() {
-    document.body.removeChild( this.stats.dom );
+    document.body.removeChild(this.stats.dom);
   }
 
   @tracked _lineGeometries = [];

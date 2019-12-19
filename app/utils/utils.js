@@ -15,20 +15,21 @@ class ObjectProperties {
   @tracked s = new THREE.Vector3();
 }
 
-
 export function newProperties(num = 20) {
-  return Array(num).fill().map(() => {
-    let properties = new ObjectProperties();
+  return Array(num)
+    .fill()
+    .map(() => {
+      let properties = new ObjectProperties();
 
-    properties.r.x = random();
-    properties.r.y = random();
-    properties.r.z = random();
+      properties.r.x = random();
+      properties.r.y = random();
+      properties.r.z = random();
 
-    let scalar = Math.random();
-    properties.s.x = scalar;
-    properties.s.y = scalar;
-    properties.s.z = scalar;
+      let scalar = Math.random();
+      properties.s.x = scalar;
+      properties.s.y = scalar;
+      properties.s.z = scalar;
 
-    return properties;
-  });
+      return properties;
+    });
 }

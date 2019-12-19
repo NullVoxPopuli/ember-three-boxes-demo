@@ -5,7 +5,6 @@ import { action } from '@ember/object';
 export const DEFAULT_DEMO = 'lines';
 
 export default class DemoComponent extends Component {
-
   @tracked selectedDemo = DEFAULT_DEMO;
 
   @action
