@@ -63,8 +63,10 @@ export default class EThreeJSScene {
   }
 
   dispose() {
-    this.scene.dispose();
     this.stop();
+    this.scene.dispose();
+    this.renderer.dispose();
+    this.preRenderCallback = undefined;
   }
 
   get domElement() {

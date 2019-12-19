@@ -22,11 +22,8 @@ export default class SceneComponent extends LifeCycleComponent {
   }
 
   @action
-  setCamera(camera) {
-    this.eThreeJsScene.setCamera(camera);
-  }
-
-  willDestroy() {
+  destroyElement() {
+    this.element.removeChild(this.eThreeJsScene.domElement);
     this.sceneService.dispose(this.args.id);
   }
 }

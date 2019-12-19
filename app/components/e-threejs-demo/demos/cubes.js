@@ -3,6 +3,7 @@ import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import Stats from 'stats.js';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
 export default class DemoComponent extends Component {
 
@@ -62,5 +63,10 @@ export default class DemoComponent extends Component {
 
     }
     this.counter += 0.05;
+  }
+
+  @action
+  destroyElement() {
+    document.body.removeChild( this.stats.dom );
   }
 }

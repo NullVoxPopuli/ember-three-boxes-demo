@@ -3,6 +3,7 @@ import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import Stats from 'stats.js';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
 export default class DemoComponent extends Component {
 
@@ -60,6 +61,11 @@ export default class DemoComponent extends Component {
         scale: new THREE.Vector3(scale, scale, scale),
       }
     });
+  }
+
+  @action
+  destroyElement() {
+    document.body.removeChild( this.stats.dom );
   }
 
   @tracked _lineGeometries = [];

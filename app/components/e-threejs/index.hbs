@@ -1,3 +1,6 @@
-<div {{did-insert this.insertElement}}></div>
+<div
+  {{did-insert this.insertElement}}
+  {{will-destroy this.destroyElement}}
+></div>
 
 {{yield this.eThreeJsScene}}

@@ -11,6 +11,6 @@ export default class DemoComponent extends Component {
   @action
   onSelectDemo(event) {
     let { value } = event.target;
-    console.log({ value });
+    this.selectedDemo = value;
   }
 }

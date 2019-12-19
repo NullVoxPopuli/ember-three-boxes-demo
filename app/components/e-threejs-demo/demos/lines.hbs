@@ -1,4 +1,4 @@
-<main>
+<main {{will-destroy this.destroyElement}}>
   <EThreejs @id={{this.sceneId}} as |s|>
     <EThreejs::Lights::DirectionalLight
       @parent={{s.scene}}
