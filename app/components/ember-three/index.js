@@ -6,12 +6,13 @@ export default class SceneComponent extends LifeCycleComponent {
   element = undefined;
   eThreeJsScene = undefined;
 
-  @service('e-threejs/scene')
-  sceneService;
+  @service('ember-three/scene-manager')
+  sceneManager;
 
   constructor(owner, args) {
     super(owner, args);
-    this.eThreeJsScene = this.sceneService.get(this.args.id);
+    let { id, rendererParams } = this.args;
+    this.eThreeJsScene = this.sceneManager.get(id, rendererParams);
   }
 
   @action
@@ -24,6 +25,6 @@ export default class SceneComponent extends LifeCycleComponent {
   @action
   destroyElement() {
     this.element.removeChild(this.eThreeJsScene.domElement);
-    this.sceneService.dispose(this.args.id);
+    this.sceneManager.dispose(this.args.id);
   }
 }

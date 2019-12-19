@@ -1,6 +1,12 @@
 import { RequestAnimationFrame } from './RequestAnimationFrame';
 import THREE from 'three';
 
+const DEFAULT_RENDERER_PARAMS = {
+  alpha: false,
+  antialias: true,
+  clearColor: 0xFFFFFF,
+};
+
 export default class EThreeJSScene {
   scene = undefined;
   renderer = undefined;
@@ -14,9 +20,12 @@ export default class EThreeJSScene {
   };
 
 
-  constructor() {
+  constructor({ rendererParams = {} } = {}) {
+    let rendererProps = { ...rendererParams, ... DEFAULT_RENDERER_PARAMS };
+
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
+    this.renderer = new THREE.WebGLRenderer(rendererProps);
+    this.renderer.setClearColor(rendererProps.clearColor);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.raf = new RequestAnimationFrame(this.render, this);
   }

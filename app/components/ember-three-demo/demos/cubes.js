@@ -8,7 +8,7 @@ import { action } from '@ember/object';
 export default class DemoComponent extends Component {
 
   @service appState;
-  @service('e-threejs/scene') sceneService;
+  @service('ember-three/scene-manager') sceneManager;
 
   @tracked containerRotation = new THREE.Euler();
 
@@ -27,13 +27,9 @@ export default class DemoComponent extends Component {
     document.body.appendChild( this.stats.dom );
 
     // TODO: fix this is not ideal, but for now it gets us a single RAF loop
-    let scene = this.sceneService.get(this.sceneId);
+    let scene = this.sceneManager.get(this.sceneId);
     scene.addPreRenderCallback(this.render, this);
     scene.setStats(this.stats);
-  }
-
-  get aspectRatio() {
-    return window.innerWidth / window.innerHeight;
   }
 
   render() {

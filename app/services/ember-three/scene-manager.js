@@ -10,7 +10,7 @@ export default class EThreeJSSceneService extends Service {
   getDefaultScene(id = undefined) {
     if (id === undefined) {
       let keys = Object.keys(EThreeJSSceneService._scenes);
-      if (keys.length > 0) {
+      if (keys.length > 1) {
         console.warn('At the moment we only support a single three js scene');
       }
 
@@ -20,10 +20,10 @@ export default class EThreeJSSceneService extends Service {
     return EThreeJSSceneService._scenes[id];
   }
 
-  get(id) {
+  get(id, { rendererParams = undefined } = {}) {
     let scene = EThreeJSSceneService._scenes[id];
     if (!scene) {
-      EThreeJSSceneService._scenes[id] = new EThreeJSScene();
+      EThreeJSSceneService._scenes[id] = new EThreeJSScene({ rendererParams });
     }
 
     return EThreeJSSceneService._scenes[id];

@@ -7,7 +7,7 @@ import { action } from '@ember/object';
 
 export default class DemoComponent extends Component {
 
-  @service('e-threejs/scene') sceneService;
+  @service('ember-three/scene-manager') sceneManager;
   @tracked containerRotation = new THREE.Euler();
 
   counter = 0;
@@ -21,7 +21,7 @@ export default class DemoComponent extends Component {
     super(...arguments);
     this.stats = new Stats();
     document.body.appendChild( this.stats.dom );
-    let scene = this.sceneService.get(this.sceneId);
+    let scene = this.sceneManager.get(this.sceneId);
     scene.addPreRenderCallback(this.render, this);
     scene.setStats(this.stats);
 
