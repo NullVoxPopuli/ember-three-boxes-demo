@@ -1690,11 +1690,6 @@
   resolved "https://registry.npmjs.org/@glimmer/di/-/di-0.1.11.tgz#a6878c07a13a2c2c76fcde598a5c97637bfc4280"
   integrity sha1-poeMB6E6LCx2/N5ZilyXY3v8QoA=
 
-"@glimmer/di@^0.2.0":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@glimmer/di/-/di-0.2.1.tgz#5286b6b32040232b751138f6d006130c728d4b3d"
-  integrity sha512-0D53YVuEgGdHfTl9LGWDZqVzGhn4cT0CXqyAuOYkKFLvqboJXz6SnkRhQNPhhA2hLVrPnvUz3+choQmPhHLGGQ==
-
 "@glimmer/env@^0.1.7":
   version "0.1.7"
   resolved "https://registry.npmjs.org/@glimmer/env/-/env-0.1.7.tgz#fd2d2b55a9029c6b37a6c935e8c8871ae70dfa07"
@@ -1704,13 +1699,6 @@
   version "0.44.0"
   resolved "https://registry.npmjs.org/@glimmer/interfaces/-/interfaces-0.44.0.tgz#0896204815f05fd8907b5703cbaee9d1b9edf5d3"
   integrity sha512-O1VBrB1uhWh/XpBRaMbT5zncZiJJNTAqe0rnhRr4JicrlmNoIC4/5ADRgDORj5oBxuENjuZ+6UTul3WCOHETiw==
-
-"@glimmer/resolver@^0.4.1":
-  version "0.4.3"
-  resolved "https://registry.npmjs.org/@glimmer/resolver/-/resolver-0.4.3.tgz#b1baae5c3291b4621002ccf8d7870466097e841d"
-  integrity sha512-UhX6vlZbWRMq6pCquSC3wfWLM9kO0PhQPD1dZ3XnyZkmsvEE94Cq+EncA9JalUuevKoJrfUFRvrZ0xaz+yar3g==
-  dependencies:
-    "@glimmer/di" "^0.2.0"
 
 "@glimmer/syntax@^0.44.0":
   version "0.44.0"
@@ -4838,7 +4826,7 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0,
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.1.2, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.12.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.7.3:
+ember-cli-babel@^7.1.2, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.12.0, ember-cli-babel@^7.7.3:
   version "7.13.0"
   resolved "https://registry.npmjs.org/ember-cli-babel/-/ember-cli-babel-7.13.0.tgz#3f2c2ba7a44d7948ec927d41cf072673330f62cd"
   integrity sha512-VjagtumwQP+3jsjLR64gpca5iq2o0PS1MT0PdC90COtAYqpOqNM9axYEYBamNLIuv+3vJpAoFKu8EMBC1ZlWGQ==
@@ -5324,18 +5312,17 @@ ember-render-helpers@^0.1.1:
     ember-cli-babel "^7.12.0"
     ember-cli-typescript "^3.1.1"
 
-ember-resolver@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/ember-resolver/-/ember-resolver-6.0.0.tgz#e06bc8720a2f9214b3aebbe1c35018d8b172560f"
-  integrity sha512-M2tarFwu0nd+fSa+Kuh8U9fRy5Vnp6l5sfoR+Pl4ihhqoIC2MdyAogVg5iKBC31AfFrYjXw0cm75UV9vLqSyzQ==
+ember-resolver@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-7.0.0.tgz#07ca86b3bae373395b44bba784b8c133f75d61c2"
+  integrity sha512-tqyWk9E1P5LL42x7AnVoE25a/YWe0WcwAr8LXasm5V7Az3vFR/zbFtwN0oI3tpoSP/nCoGWDct6dRYlXrQjqBQ==
   dependencies:
-    "@glimmer/resolver" "^0.4.1"
     babel-plugin-debug-macros "^0.3.3"
     broccoli-funnel "^2.0.2"
     broccoli-merge-trees "^3.0.0"
-    ember-cli-babel "^7.13.0"
+    ember-cli-babel "^7.13.2"
     ember-cli-version-checker "^3.1.3"
-    resolve "^1.12.0"
+    resolve "^1.14.0"
 
 ember-rfc176-data@^0.3.12:
   version "0.3.12"
@@ -9500,7 +9487,7 @@ resolve@^1.1.3, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.11.1, resolve@^1.12
   dependencies:
     path-parse "^1.0.6"
 
-resolve@^1.13.1:
+resolve@^1.13.1, resolve@^1.14.0:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.15.1.tgz#27bdcdeffeaf2d6244b95bb0f9f4b4653451f3e8"
   integrity sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
