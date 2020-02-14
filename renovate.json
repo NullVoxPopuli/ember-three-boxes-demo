@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "automerge": true,
+  "masterIssue": true,
+  "packageRules": [
+    {
+      "paths": ["package.json"],
+      "rangeStrategy": "bump"
+    }
+  ]
+}
