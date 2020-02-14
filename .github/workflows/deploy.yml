@@ -28,7 +28,6 @@ jobs:
       -
         name: Deploy
         uses: maxheld83/ghpages@v0.2.1
-        if: success() && github.event == 'push' && github.ref == 'master'
         env:
           BUILD_DIR: 'dist/'
           GH_PAT: ${{ secrets.GH_PAT }}
