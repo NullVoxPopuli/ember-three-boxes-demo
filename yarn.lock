@@ -10758,10 +10758,10 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-tracked-built-ins@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/tracked-built-ins/-/tracked-built-ins-1.0.0.tgz#424b08989ae2192f5f9d4fb45d090d0f22b16492"
-  integrity sha512-mFS97p72oUlre+9uisrhwAPa+i+F9eQ0T4xLMNKdOWTi0fGxWXt9oYs1WmvZ5auj0RXivi09HuHfw172s9adTQ==
+tracked-built-ins@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tracked-built-ins/-/tracked-built-ins-1.0.1.tgz#7656da621ab3f9a4ee1518700fe2a276cf405b3d"
+  integrity sha512-50Hv3dJPW2SQqV3SMPMhhFJwHewuC1fc+qieXmRbI/HyI+/Vaa+e6Pl8FBAWtpaB8emD+OXeo8cC25cpS8vSgg==
   dependencies:
     ember-cli-babel "^7.18.0"
     ember-cli-typescript "^3.0.0"
