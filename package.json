@@ -55,7 +55,7 @@
     "node": "8.* || >= 10.*"
   },
   "dependencies": {
-    "qs": "^6.9.3",
+    "qs": "^6.9.4",
     "throttle-debounce": "^2.1.0"
   }
 }
