@@ -56,6 +56,6 @@
   },
   "dependencies": {
     "qs": "^6.9.4",
-    "throttle-debounce": "^2.2.1"
+    "throttle-debounce": "^2.3.0"
   }
 }
