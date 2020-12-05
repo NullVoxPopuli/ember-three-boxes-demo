@@ -1,38 +1,27 @@
-import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
-import qs from 'qs';
-import {newRotations} from '../utils/utils';
-import { tracked as pTracked, TrackedArray } from 'tracked-built-ins';
+import Service, { inject as service } from "@ember/service";
+import { cached } from "@glimmer/tracking";
+import { newRotations } from "../utils/utils";
+
+const DEFAULT_COUNT = 1;
 
 export default class AppStateService extends Service {
-  @tracked count = 20;
+  @service router;
 
-  // @pTracked rotations = [];
-  @tracked rotations = [];
+  @cached
+  get rotations() {
+    return newRotations(this.count);
+  }
 
-  constructor() {
-    super(...arguments);
+  get count() {
+    let qps = this.router.currentRoute.queryParams;
+    let { n } = qps || {};
 
-    let query = window.location.href.split('?')[1];
-    let parsed = qs.parse(query);
+    if (n) {
+      let parsedInt = parseInt(n, 10);
 
-    if (parsed.amount) {
-      let parsedInt = parseInt(parsed.amount, 10);
-
-      if (parsedInt) {
-        this.count = parsedInt;
-      }
+      return parsedInt || DEFAULT_COUNT;
     }
 
-    this.updateRotations();
-  }
-
-  updateCount(newCount) {
-    this.count = newCount;
-    this.updateRotations();
-  }
-
-  updateRotations() {
-    this.rotations = newRotations(this.count);
+    return DEFAULT_COUNT;
   }
 }

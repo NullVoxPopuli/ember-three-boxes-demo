@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-yarn build --environment=production
+yarn build
 cp dist/index.html dist/404.html
 
 git add .

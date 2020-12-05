@@ -10,38 +10,46 @@
     "doc": "doc",
     "test": "tests"
   },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "ember": {
+    "edition": "octane"
+  },
   "scripts": {
     "deploy": "./scripts/deploy.sh",
-    "build": "ember build",
+    "build": "ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test"
   },
   "devDependencies": {
-    "@ember/edition-utils": "^1.2.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^1.0.2",
+    "@glimmer/tracking": "^1.0.2",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.8.0",
-    "ember-cli": "3.22.0",
+    "ember-cached-decorator-polyfill": "^0.1.0",
+    "ember-classic-decorator": "^2.0.0",
+    "ember-cli": "^3.22.0",
     "ember-cli-app-version": "^4.0.0",
     "ember-cli-babel": "^7.23.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-htmlbars": "^5.3.1",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-uglify": "^3.0.0",
+    "ember-cli-terser": "^4.0.1",
+    "ember-could-get-used-to-this": "^1.0.1",
     "ember-export-application-global": "^2.0.1",
     "ember-lifecycle-component": "^0.7.0",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^4.6.0",
-    "ember-render-helpers": "^0.1.1",
     "ember-resolver": "^8.0.2",
-    "ember-source": "^3.23.1",
+    "ember-source": "3.24.0-beta.2",
     "ember-template-lint": "^2.14.0",
     "eslint": "^7.15.0",
     "eslint-plugin-ember": "^10.0.2",
@@ -51,11 +59,7 @@
     "three": "^0.123.0",
     "tracked-built-ins": "^1.0.2"
   },
-  "engines": {
-    "node": "8.* || >= 10.*"
-  },
   "dependencies": {
-    "qs": "^6.9.4",
-    "throttle-debounce": "^3.0.1"
+    "stats.js": "^0.17.0"
   }
 }

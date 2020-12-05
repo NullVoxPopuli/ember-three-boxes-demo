@@ -39,6 +39,8 @@ export default class SceneComponent extends LifeCycleComponent {
   }
 
   willDestroy() {
-    this.scene.dispose();
+    this.renderer.renderLists.dispose();
+    this.renderer.dispose();
+    // this.scene.dispose();
   }
 }

@@ -1,27 +1,42 @@
-import Component from '@ember/component';
-import { action } from '@ember/object';
+// eslint-disable-next-line ember/no-classic-components
+import Component from "@ember/component";
+import { action } from "@ember/object";
+import classic from "ember-classic-decorator";
 
-import THREE from 'three';
+import THREE from "three";
 
+/**
+ * NOTE: the following are built-in APIs and collide with common THREE
+ *       property names:
+ *       - render
+ *       - renderer
+ *
+ *       This is not an issue for @glimmer/component, only @ember/component
+ *
+ */
+@classic
 export default class SceneComponent extends Component {
-  tagName = '';
+  tagName = "";
   element = undefined;
 
-  constructor(owner, args) {
-    super(owner, args);
+  init(owner, args) {
+    super.init(owner, args);
 
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.threeRenderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: false,
+    });
+    this.threeRenderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   @action
   setElement(element) {
     this.element = element;
-    this.element.appendChild(this.renderer.domElement);
+    this.element.appendChild(this.threeRenderer.domElement);
 
     if (this.camera) {
-      this.args.onInit(this.render);
+      this.onInit(this.renderScene);
     }
   }
 
@@ -30,16 +45,18 @@ export default class SceneComponent extends Component {
     this.camera = camera;
 
     if (this.element) {
-      this.args.onInit(this.render);
+      this.onInit(this.renderScene);
     }
   }
 
   @action
-  render() {
-    this.renderer.render(this.scene, this.camera);
+  renderScene() {
+    this.threeRenderer.render(this.scene, this.camera);
   }
 
   willDestroy() {
-    this.scene.dispose();
+    this.threeRenderer.renderLists.dispose();
+    this.threeRenderer.dispose();
+    // this.scene.dispose();
   }
 }
