@@ -1,23 +1,31 @@
-import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { throttle } from 'throttle-debounce';
+import Component from "@glimmer/component";
+import { inject as service } from "@ember/service";
+import { action } from "@ember/object";
 
-import { WebGlHelper } from './web-gl-helper';
+import { WebGlHelper } from "./web-gl-helper";
 
 function random() {
   return Math.random() * 360;
 }
 
 function newRotations(num = 20) {
-  return Array(num).fill().map(() => [random(), random(), random()]);
+  return Array(num)
+    .fill()
+    .map(() => [random(), random(), random()]);
 }
 
 export default class DemoComponent extends Component {
+  @service router;
   @service appState;
+  @service stats;
 
-  @tracked fps = 0;
+  constructor() {
+    super(...arguments);
+
+    this.router.on("routeDidChange", () => {
+      this.onUpdate();
+    });
+  }
 
   @action
   onUpdate() {
@@ -28,11 +36,14 @@ export default class DemoComponent extends Component {
   setup(element) {
     this.renderer = new WebGlHelper({
       container: element,
-      onFPSUpdate: throttle(120, (fps) => this.fps = Math.round(fps)),
+      stats: this.stats,
     });
 
     this.renderer.animate();
     this.onUpdate();
   }
-}
 
+  willDestroy() {
+    this.renderer.willDestroy();
+  }
+}

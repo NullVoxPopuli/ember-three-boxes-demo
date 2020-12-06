@@ -1,13 +1,10 @@
 import THREE from 'three';
 
-import { avg } from 'ember-three-boxes-demo/utils/utils';
-
 // Static things that won't change
 let geometry = new THREE.BoxGeometry( 2, 2, 2 );
 let material = new THREE.MeshNormalMaterial();
 
 export class WebGlHelper {
-  frames = Array(10).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
   boxes = []; // references to all meshes
 
@@ -16,9 +13,8 @@ export class WebGlHelper {
   camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
   renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
 
-  constructor({ container, onFPSUpdate, }) {
+  constructor({ container, stats }) {
     this.element = container;
-    this.onFPSUpdate = onFPSUpdate;
 
     // fov, ratio, zNear, zFar
     this.camera.position.set(0, 0, 3.2);
@@ -28,6 +24,7 @@ export class WebGlHelper {
     this.element.appendChild(this.renderer.domElement);
 
     this.animate = this.animate.bind(this);
+    this.stats = stats;
   }
 
   syncBoxes(rotations) {
@@ -63,10 +60,10 @@ export class WebGlHelper {
   }
 
   animate() {
-    let last = Date.now();
     let boundCallback;
 
     function loop() {
+      this.stats.begin();
       this.frame = requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < this.boxes.length; i++) {
@@ -77,14 +74,7 @@ export class WebGlHelper {
       }
 
       this.renderer.render(this.scene, this.camera);
-
-      const now = Date.now();
-      const elapsed = now - last;
-
-      this.frames.shift();
-      this.frames.push(1000 / elapsed);
-      this.onFPSUpdate(avg(this.frames));
-      last = now;
+      this.stats.end();
     }
 
     boundCallback = loop.bind(this);
@@ -93,6 +83,8 @@ export class WebGlHelper {
 
   willDestroy() {
     cancelAnimationFrame(this.frame);
-    this.scene.dispose();
+    this.renderer.renderLists.dispose();
+    this.renderer.dispose();
+    // this.scene.dispose();
   }
 }

@@ -39,6 +39,7 @@ export default class SceneComponent extends Component {
   }
 
   willDestroy() {
-    this.scene.dispose();
+    this.renderer.renderLists.dispose();
+    this.renderer.dispose();
   }
 }

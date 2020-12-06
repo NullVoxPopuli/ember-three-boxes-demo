@@ -1,15 +1,16 @@
-import { inject as service } from '@ember/service';
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action, computed } from '@ember/object';
-import { throttle } from 'throttle-debounce';
+import { inject as service } from "@ember/service";
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
 
-import { avg, newRotations } from 'ember-three-boxes-demo/utils/utils';
+import { Optimized } from "../../utils/utils";
+
+const ROTATION_SPEED = 0.01;
 
 export default class DemoComponent extends Component {
   @service appState;
+  @service stats;
 
-  frames = Array(10).fill(0); // for smoothing out FPS counter
   frame = undefined; // for tracking the current frame
 
   @tracked fps = 0;
@@ -20,41 +21,33 @@ export default class DemoComponent extends Component {
 
   @action
   animate(updateCanvas) {
-    let last = Date.now();
     let boundCallback;
 
-    let fpsUpdate = () => {
-      this.fps = Math.round(avg(this.frames));
-    }
-    let updateFps = throttle(120, fpsUpdate);
-
     function loop() {
+      this.stats.begin();
       let rotations = this.appState.rotations;
       this.frame = requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < rotations.length; i++) {
-
-        // this.rotations[i].x += 0.01;
-        // this.rotations[i].y += 0.01;
-        // this.rotations[i].z += 0.01;
         let rotation = rotations[i];
-        rotation.r = {
-          x: rotation.r.x + 0.01,
-          y: rotation.r.y + 0.01,
-          z: rotation.r.z + 0.01,
+
+        if (rotation instanceof Optimized) {
+          // Single tracked property
+          rotation.r = {
+            x: rotation.r.x + ROTATION_SPEED,
+            y: rotation.r.y + ROTATION_SPEED,
+            z: rotation.r.z + ROTATION_SPEED,
+          };
+        } else {
+          // 3 Tracked Properties
+          rotation.x += ROTATION_SPEED;
+          rotation.y += ROTATION_SPEED;
+          rotation.z += ROTATION_SPEED;
         }
       }
 
       updateCanvas();
-
-      const now = Date.now();
-      const elapsed = now - last;
-
-      this.frames.shift();
-      this.frames.push(1000 / elapsed);
-      updateFps();
-
-      last = now;
+      this.stats.end();
     }
 
     boundCallback = loop.bind(this);
