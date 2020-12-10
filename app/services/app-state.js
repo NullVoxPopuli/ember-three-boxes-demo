@@ -2,7 +2,7 @@ import Service, { inject as service } from "@ember/service";
 import { cached } from "@glimmer/tracking";
 import { newRotations } from "../utils/utils";
 
-const DEFAULT_COUNT = 1;
+const DEFAULT_COUNT = 2;
 
 export default class AppStateService extends Service {
   @service router;
