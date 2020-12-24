@@ -58,7 +58,7 @@
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.6.0",
     "qunit": "^2.13.0",
-    "three": "^0.123.0",
+    "three": "^0.124.0",
     "tracked-built-ins": "^1.0.2"
   },
   "dependencies": {
