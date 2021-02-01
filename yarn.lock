@@ -5093,10 +5093,10 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/ember-lifecycle-component/-/ember-lifecycle-component-0.7.0.tgz#717ee70ce31d9cce044dde27aae4e4b4740d1b6f"
-  integrity sha512-oH2u9DV1SO71dw1r3jt5ntfVhzVSc6bPGlmevpeN5m+UWeU2dm27M07/NmD2j2HBFRTHnzysedb/4OH7mx5t3Q==
+ember-lifecycle-component@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-0.7.1.tgz#7ba8a13bc6783449408134d419c36e2615958cce"
+  integrity sha512-/4Q4J7CY3SctBNEjGevCxUXSJcytfbGGN0GISITfmWWswF+6cKKc6r0GRLlGF2eQA0EPPy7ay2Bzydj2YUtraw==
   dependencies:
     ember-cli-babel "^7.13.2"
     ember-cli-htmlbars "^4.0.5"
