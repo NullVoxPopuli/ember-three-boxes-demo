@@ -4931,10 +4931,10 @@ ember-cli-typescript@^3.0.0, ember-cli-typescript@^3.1.4:
     stagehand "^1.0.0"
     walk-sync "^2.0.0"
 
-ember-cli-typescript@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-4.0.0.tgz#690f0cd3d15f4a69ae6d89f25b70b5997ae59161"
-  integrity sha512-ZwnBbBJ0yAIKq4FVgNFkxfMwqJhw6PyT45Enp2RvWIgzgaYCId8brrSgg3tvVWWjA7N5hiT4Ilyz5jrQwrnU1Q==
+ember-cli-typescript@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-4.1.0.tgz#2ff17be2e6d26b58c88b1764cb73887e7176618b"
+  integrity sha512-zSuKG8IQuYE3vS+c7V0mHJqwrN/4Wo9Wr50+0NUjnZH3P99ChynczQHu/P7WSifkO6pF6jaxwzf09XzWvG8sVw==
   dependencies:
     ansi-to-html "^0.6.6"
     broccoli-stew "^3.0.0"
@@ -5109,15 +5109,15 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.2.tgz#65d07f968e9dbddfac3d51c2b2be2d85dc4373c7"
-  integrity sha512-XK7YOddbhWrVoeEDktY7UR4neWvQ4uCU4k9n0+szHCS+owrTwT3ySh0gwVOfFcBIxSOBg2IJa3JZjbDuovCYhw==
+ember-lifecycle-component@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.3.tgz#6c353e494b64218d519fb24c795915ec820fbf62"
+  integrity sha512-DkqFz7aIaJJF0PmO04qpWXt7tYrN+gVOrKy2mtRrw+fTnJgKIUpKDSIqed4+FAAXNc7yZ3NjW/ahiLnX5NZJ6g==
   dependencies:
     ember-cli-babel "^7.23.1"
     ember-cli-htmlbars "^5.3.1"
-    ember-cli-typescript "^4.0.0"
-    ember-template-lint "^2.18.0"
+    ember-cli-typescript "^4.1.0"
+    ember-template-lint "^2.18.1"
     eslint "^7.19.0"
 
 ember-load-initializers@^2.1.2:
@@ -5224,22 +5224,6 @@ ember-source@3.24.1:
     resolve "^1.17.0"
     semver "^6.1.1"
     silent-error "^1.1.1"
-
-ember-template-lint@^2.18.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.18.0.tgz#cba7665c2ff3c34734285768d7bf41cdd08ffb3f"
-  integrity sha512-4J1Dk2ZaMo/nqtP4QJF+25yYnKNOewE8xopSRNGjgQpNwaUFZmZCtzJtoSJF6+SRLcMDljnewXRezugok4ljug==
-  dependencies:
-    chalk "^4.0.0"
-    ember-template-recast "^5.0.1"
-    find-up "^5.0.0"
-    get-stdin "^8.0.0"
-    globby "^11.0.2"
-    is-glob "^4.0.1"
-    micromatch "^4.0.2"
-    resolve "^1.19.0"
-    v8-compile-cache "^2.2.0"
-    yargs "^16.2.0"
 
 ember-template-lint@^2.18.1:
   version "2.18.1"
