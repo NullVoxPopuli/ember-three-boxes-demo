@@ -50,7 +50,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^5.1.2",
     "ember-resolver": "^8.0.2",
-    "ember-source": "3.25.0",
+    "ember-source": "3.25.1",
     "ember-template-lint": "^2.18.1",
     "eslint": "^7.19.0",
     "eslint-plugin-ember": "^10.2.0",
