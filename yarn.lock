@@ -5365,28 +5365,7 @@ ember-cli-htmlbars@^5.2.0:
     strip-bom "^4.0.0"
     walk-sync "^2.2.0"
 
-ember-cli-htmlbars@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-5.4.0.tgz#1eabd0a2a6b9e8877c2e79d3ab3a0627fde90ddc"
-  integrity sha512-AOThrNG+G6SejHvvfYja72PgpQ5lKJHVEhXyFpuwUPGGeXxqTDzpfh/UYnok/esVBIuM/eJW6qpTHMuZQcPNQg==
-  dependencies:
-    "@ember/edition-utils" "^1.2.0"
-    babel-plugin-htmlbars-inline-precompile "^4.4.1"
-    broccoli-debug "^0.6.5"
-    broccoli-persistent-filter "^3.1.2"
-    broccoli-plugin "^4.0.3"
-    common-tags "^1.8.0"
-    ember-cli-babel-plugin-helpers "^1.1.1"
-    fs-tree-diff "^2.0.1"
-    hash-for-dep "^1.5.1"
-    heimdalljs-logger "^0.1.10"
-    json-stable-stringify "^1.0.1"
-    semver "^7.3.4"
-    silent-error "^1.1.1"
-    strip-bom "^4.0.0"
-    walk-sync "^2.2.0"
-
-ember-cli-htmlbars@^5.6.0:
+ember-cli-htmlbars@^5.5.0, ember-cli-htmlbars@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-5.6.0.tgz#4e61272ec79296bbc8359b90db4fa6c8978eb17f"
   integrity sha512-eSNetEGHyxt4bZ2mfgrJqjdBv7+JOWe6uJxyCo49kEHG3aeQLr+9jFgkyRnSPgmOjph8ouiGzDPTeXbGEdUG0A==
@@ -5718,13 +5697,13 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.6.tgz#cf133093251a8d792456e70249059e66b6d5e823"
-  integrity sha512-/85he6OHEF85vCfLTstDvWNECWPKbU5CMOiTpRk37liaJqfrm4fqyReJKbVB4sNBCrHBbROPlInrru7lQI1IJg==
+ember-lifecycle-component@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.7.tgz#b450c0db91819e6ae2e5885046cbc1f54bcbc24d"
+  integrity sha512-Ntq/V26ZoSDNU/5ZqKvsoxdWn5ml6xnV/eykaKAFySElZ+kiedbHxO/UyoSBR1FaX3/bYe89zA5W6FwzVkB6YA==
   dependencies:
     ember-cli-babel "^7.24.0"
-    ember-cli-htmlbars "^5.4.0"
+    ember-cli-htmlbars "^5.5.0"
     ember-cli-typescript "^4.1.0"
     ember-template-lint "^2.20.0"
     eslint "^7.20.0"
