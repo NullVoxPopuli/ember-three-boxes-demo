@@ -5365,7 +5365,7 @@ ember-cli-htmlbars@^5.2.0:
     strip-bom "^4.0.0"
     walk-sync "^2.2.0"
 
-ember-cli-htmlbars@^5.5.0, ember-cli-htmlbars@^5.6.0:
+ember-cli-htmlbars@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-5.6.0.tgz#4e61272ec79296bbc8359b90db4fa6c8978eb17f"
   integrity sha512-eSNetEGHyxt4bZ2mfgrJqjdBv7+JOWe6uJxyCo49kEHG3aeQLr+9jFgkyRnSPgmOjph8ouiGzDPTeXbGEdUG0A==
@@ -5697,13 +5697,13 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.7.tgz#b450c0db91819e6ae2e5885046cbc1f54bcbc24d"
-  integrity sha512-Ntq/V26ZoSDNU/5ZqKvsoxdWn5ml6xnV/eykaKAFySElZ+kiedbHxO/UyoSBR1FaX3/bYe89zA5W6FwzVkB6YA==
+ember-lifecycle-component@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.8.tgz#b92e365d03fc659f24a8fc29b02d160e98da2a09"
+  integrity sha512-uGMUqA2azuJAA2ltrzB9oiwet3YQvVoWucq+5N4PpHb+3rIXRJk6pyN5nEmFLr273pSSl/HaTQZgqKsEtSOcpQ==
   dependencies:
     ember-cli-babel "^7.24.0"
-    ember-cli-htmlbars "^5.5.0"
+    ember-cli-htmlbars "^5.6.0"
     ember-cli-typescript "^4.1.0"
     ember-template-lint "^2.20.0"
     eslint "^7.20.0"
