@@ -5831,6 +5831,23 @@ ember-template-lint@^2.20.0:
     v8-compile-cache "^2.2.0"
     yargs "^16.2.0"
 
+ember-template-lint@^2.21.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.21.0.tgz#7e120abf309a8810eeed26c52377943faf15a95b"
+  integrity sha512-19QbEqJQdMfcRS7PsQsubflRowEtnkbD0tpYR4q/xq4lodmhU7hhOFvlTQgbxD/jwW5Ur+tkOwH4KFy9JwOyXA==
+  dependencies:
+    chalk "^4.0.0"
+    ember-template-recast "^5.0.1"
+    find-up "^5.0.0"
+    fuse.js "^6.4.6"
+    get-stdin "^8.0.0"
+    globby "^11.0.2"
+    is-glob "^4.0.1"
+    micromatch "^4.0.2"
+    resolve "^1.20.0"
+    v8-compile-cache "^2.2.0"
+    yargs "^16.2.0"
+
 ember-template-recast@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ember-template-recast/-/ember-template-recast-5.0.1.tgz#c5d9e7208bf629ee368a3792328f245f3c651003"
