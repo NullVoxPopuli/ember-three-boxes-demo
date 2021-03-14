@@ -57,7 +57,7 @@
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.6.0",
-    "qunit": "^2.14.0",
+    "qunit": "^2.14.1",
     "three": "^0.126.1",
     "tracked-built-ins": "^1.0.2"
   },
