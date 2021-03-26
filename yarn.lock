@@ -1290,16 +1290,6 @@
     slash "^3.0.0"
     tslib "^2.1.0"
 
-"@ember-template-lint/todo-utils@^8.0.0-beta.3":
-  version "8.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@ember-template-lint/todo-utils/-/todo-utils-8.0.0-beta.3.tgz#9a048c2787c781f80a6ae682787fbfcb5ea8e03d"
-  integrity sha512-L0XXY8U6Jk4c4OGSydhxa5K3/kyUpaqc6IpYW4wU8g1yu/zOj7XgKgmp48+t3dt1p6Xa+CHKnD1I86m99BEYXg==
-  dependencies:
-    "@types/eslint" "^7.2.6"
-    fs-extra "^9.0.1"
-    slash "^3.0.0"
-    tslib "^2.1.0"
-
 "@ember/edition-utils@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@ember/edition-utils/-/edition-utils-1.2.0.tgz#a039f542dc14c8e8299c81cd5abba95e2459cfa6"
@@ -1717,14 +1707,6 @@
   integrity sha512-2+FrkXY4zllzTNfJth7jOqEHC+enpLeGslEhpnTAkg21GkRrWV4SsAtqchtT4YS9/nODBU2/ZfsBY2X4J/dX7A==
   dependencies:
     "@types/node" "*"
-
-"@types/eslint@^7.2.6":
-  version "7.2.6"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.6.tgz#5e9aff555a975596c03a98b59ecd103decc70c3c"
-  integrity sha512-I+1sYH+NPQ3/tVqCeUSBwTE/0heyvtXqpIopUUArlBm0Kpocb8FbMa3AZ/ASKIFpN3rnEx932TTXDbt9OXsNDw==
-  dependencies:
-    "@types/estree" "*"
-    "@types/json-schema" "*"
 
 "@types/eslint@^7.2.7":
   version "7.2.7"
@@ -5585,15 +5567,15 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.18.tgz#dfe6938c7b5ba25b08ab731b4240407e7da66601"
-  integrity sha512-18ZZEYfFxbZ+r5KKgUHcUsVoKDGXY+2YCQQ+Ux4gx6/xpJ+vUA4x6HSrG3sUtyRCFfsWitBb4aCelOgg5Mx3Ng==
+ember-lifecycle-component@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.19.tgz#e0c094fd93b1a7a3c9a65f465e4052fc51d2d292"
+  integrity sha512-DmdVcQ3VxkaPDspQVewd+KlRpL6AgJhSNNnXS53MFgXEzLQA0kIar46EDmh9hoR2qveHhVeMBXWAvbELqE7aGQ==
   dependencies:
-    ember-cli-babel "^7.26.2"
+    ember-cli-babel "^7.26.3"
     ember-cli-htmlbars "^5.7.1"
     ember-cli-typescript "^4.1.0"
-    ember-template-lint "^3.1.1"
+    ember-template-lint "^3.2.0"
     eslint "^7.22.0"
 
 ember-load-initializers@^2.1.2:
@@ -5706,24 +5688,6 @@ ember-source@3.26.1:
     resolve "^1.17.0"
     semver "^7.3.4"
     silent-error "^1.1.1"
-
-ember-template-lint@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.1.1.tgz#56f7f4be11241e88a96d436893387229e105fb0d"
-  integrity sha512-4xtcPPuqGteHhM/5qgy4pHT5bobmcltFyAVIsbdOsqtRJ048KZNd6lLhT521fxmTCbAHkqUGNdPmzCk4VfH5Xg==
-  dependencies:
-    "@ember-template-lint/todo-utils" "^8.0.0-beta.3"
-    chalk "^4.0.0"
-    ember-template-recast "^5.0.1"
-    find-up "^5.0.0"
-    fuse.js "^6.4.6"
-    get-stdin "^8.0.0"
-    globby "^11.0.2"
-    is-glob "^4.0.1"
-    micromatch "^4.0.2"
-    resolve "^1.20.0"
-    v8-compile-cache "^2.2.0"
-    yargs "^16.2.0"
 
 ember-template-lint@^3.2.0:
   version "3.2.0"
@@ -6989,18 +6953,6 @@ globby@^11.0.1:
   version "11.0.1"
   resolved "https://registry.npmjs.org/globby/-/globby-11.0.1.tgz#9a2bf107a068f3ffeabc49ad702c79ede8cfd357"
   integrity sha512-iH9RmgwCmUJHi2z5o2l3eTtGBtXek1OYlHrbcxOYugyHLmAsZrPj43OtHThd62Buh/Vv6VyCBD2bdyWcGNQqoQ==
-  dependencies:
-    array-union "^2.1.0"
-    dir-glob "^3.0.1"
-    fast-glob "^3.1.1"
-    ignore "^5.1.4"
-    merge2 "^1.3.0"
-    slash "^3.0.0"
-
-globby@^11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.2.tgz#1af538b766a3b540ebfb58a32b2e2d5897321d83"
-  integrity sha512-2ZThXDvvV8fYFRVIxnrMQBipZQDr7MxKAmQK1vujaj9/7eF0efG7BPUKJ7jP7G5SLF37xKDXvO4S/KKLj/Z0og==
   dependencies:
     array-union "^2.1.0"
     dir-glob "^3.0.1"
@@ -11263,7 +11215,7 @@ uuid@^8.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-v8-compile-cache@^2.0.3, v8-compile-cache@^2.2.0:
+v8-compile-cache@^2.0.3:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz#9471efa3ef9128d2f7c6a7ca39c4dd6b5055b132"
   integrity sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==
