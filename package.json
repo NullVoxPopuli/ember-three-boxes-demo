@@ -59,7 +59,7 @@
     "qunit-dom": "^1.6.0",
     "qunit": "^2.15.0",
     "three": "^0.128.0",
-    "tracked-built-ins": "^1.0.2"
+    "tracked-built-ins": "^1.1.1"
   },
   "dependencies": {
     "stats.js": "^0.17.0"
