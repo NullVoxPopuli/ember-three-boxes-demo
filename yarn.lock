@@ -4692,11 +4692,6 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-fns@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
-  integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
-
 date-fns@^2.21.1:
   version "2.21.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.1.tgz#679a4ccaa584c0706ea70b3fa92262ac3009d2b0"
@@ -5601,16 +5596,16 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.19.tgz#e0c094fd93b1a7a3c9a65f465e4052fc51d2d292"
-  integrity sha512-DmdVcQ3VxkaPDspQVewd+KlRpL6AgJhSNNnXS53MFgXEzLQA0kIar46EDmh9hoR2qveHhVeMBXWAvbELqE7aGQ==
+ember-lifecycle-component@^1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.20.tgz#039a7280b0c1165e0a26e98447fa2b4cd6c79833"
+  integrity sha512-ETgSBjXXHX+yASZNim7jM2PdJTgr5bZ03f43jGvb1lMtOHJZdOiOMz2ZLSo37shrtTff6sWfuuw3bs84BqGrjw==
   dependencies:
-    ember-cli-babel "^7.26.3"
+    ember-cli-babel "^7.26.4"
     ember-cli-htmlbars "^5.7.1"
     ember-cli-typescript "^4.1.0"
-    ember-template-lint "^3.2.0"
-    eslint "^7.22.0"
+    ember-template-lint "^3.3.0"
+    eslint "^7.25.0"
 
 ember-load-initializers@^2.1.2:
   version "2.1.2"
@@ -5722,25 +5717,6 @@ ember-source@3.26.1:
     resolve "^1.17.0"
     semver "^7.3.4"
     silent-error "^1.1.1"
-
-ember-template-lint@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.2.0.tgz#d9fefc4f572079db2807c068f652a9d3cdc84c7c"
-  integrity sha512-X37VYwhi2JdVU7+CQDtLCCSHzK2+CeQ64/WQ4hKt9bx1ZtvxWXDMd2BNeDBckY/YvdviG0Yq2VARCzHpkiElwQ==
-  dependencies:
-    "@ember-template-lint/todo-utils" "^8.0.0"
-    chalk "^4.0.0"
-    date-fns "^2.19.0"
-    ember-template-recast "^5.0.1"
-    find-up "^5.0.0"
-    fuse.js "^6.4.6"
-    get-stdin "^8.0.0"
-    globby "^11.0.3"
-    is-glob "^4.0.1"
-    micromatch "^4.0.2"
-    resolve "^1.20.0"
-    v8-compile-cache "^2.3.0"
-    yargs "^16.2.0"
 
 ember-template-lint@^3.3.0:
   version "3.3.0"
@@ -5986,49 +5962,6 @@ eslint-visitor-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-
-eslint@^7.22.0:
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.22.0.tgz#07ecc61052fec63661a2cab6bd507127c07adc6f"
-  integrity sha512-3VawOtjSJUQiiqac8MQc+w457iGLfuNGLFn8JmF051tTKbh5/x/0vlcEj8OgDCaw7Ysa2Jn8paGshV7x2abKXg==
-  dependencies:
-    "@babel/code-frame" "7.12.11"
-    "@eslint/eslintrc" "^0.4.0"
-    ajv "^6.10.0"
-    chalk "^4.0.0"
-    cross-spawn "^7.0.2"
-    debug "^4.0.1"
-    doctrine "^3.0.0"
-    enquirer "^2.3.5"
-    eslint-scope "^5.1.1"
-    eslint-utils "^2.1.0"
-    eslint-visitor-keys "^2.0.0"
-    espree "^7.3.1"
-    esquery "^1.4.0"
-    esutils "^2.0.2"
-    file-entry-cache "^6.0.1"
-    functional-red-black-tree "^1.0.1"
-    glob-parent "^5.0.0"
-    globals "^13.6.0"
-    ignore "^4.0.6"
-    import-fresh "^3.0.0"
-    imurmurhash "^0.1.4"
-    is-glob "^4.0.0"
-    js-yaml "^3.13.1"
-    json-stable-stringify-without-jsonify "^1.0.1"
-    levn "^0.4.1"
-    lodash "^4.17.21"
-    minimatch "^3.0.4"
-    natural-compare "^1.4.0"
-    optionator "^0.9.1"
-    progress "^2.0.0"
-    regexpp "^3.1.0"
-    semver "^7.2.1"
-    strip-ansi "^6.0.0"
-    strip-json-comments "^3.1.0"
-    table "^6.0.4"
-    text-table "^0.2.0"
-    v8-compile-cache "^2.0.3"
 
 eslint@^7.25.0:
   version "7.25.0"
