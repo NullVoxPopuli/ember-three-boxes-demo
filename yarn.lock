@@ -1281,6 +1281,16 @@
     slash "^3.0.0"
     tslib "^2.1.0"
 
+"@ember-template-lint/todo-utils@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@ember-template-lint/todo-utils/-/todo-utils-8.1.0.tgz#0fe8ef9ebd1948dea34d27d89a2e245687bb57d9"
+  integrity sha512-fnxDli4RfYGVBXc64D0fg7ifkSrNE8J/ee4eqQLzTrsUJbisWMlmU2NTHm990XcZkulYkCnkiLKERU/k1tx5IQ==
+  dependencies:
+    "@types/eslint" "^7.2.10"
+    fs-extra "^9.1.0"
+    slash "^3.0.0"
+    tslib "^2.1.0"
+
 "@ember/edition-utils@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@ember/edition-utils/-/edition-utils-1.2.0.tgz#a039f542dc14c8e8299c81cd5abba95e2459cfa6"
@@ -1698,6 +1708,14 @@
   integrity sha512-2+FrkXY4zllzTNfJth7jOqEHC+enpLeGslEhpnTAkg21GkRrWV4SsAtqchtT4YS9/nODBU2/ZfsBY2X4J/dX7A==
   dependencies:
     "@types/node" "*"
+
+"@types/eslint@^7.2.10":
+  version "7.2.10"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.10.tgz#4b7a9368d46c0f8cd5408c23288a59aa2394d917"
+  integrity sha512-kUEPnMKrqbtpCq/KTaGFFKAcz6Ethm2EjCoKIDaCmfRBWLbFuTcOJfTlorwbnboXBzahqWLgUp1BQeKHiJzPUQ==
+  dependencies:
+    "@types/estree" "*"
+    "@types/json-schema" "*"
 
 "@types/eslint@^7.2.7":
   version "7.2.7"
@@ -5724,6 +5742,25 @@ ember-template-lint@^3.3.1:
   integrity sha512-YONgtnXXhaeNu2kwrHmnqWh2a6aZlVO3aRCLqjGpt0sGwtiXteeT7L7slJdJRtTTxEG/2QdNVFLr4Uef4rIUbw==
   dependencies:
     "@ember-template-lint/todo-utils" "^8.0.0"
+    chalk "^4.1.1"
+    date-fns "^2.21.1"
+    ember-template-recast "^5.0.1"
+    find-up "^5.0.0"
+    fuse.js "^6.4.6"
+    get-stdin "^8.0.0"
+    globby "^11.0.3"
+    is-glob "^4.0.1"
+    micromatch "^4.0.4"
+    resolve "^1.20.0"
+    v8-compile-cache "^2.3.0"
+    yargs "^16.2.0"
+
+ember-template-lint@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.4.0.tgz#2d5dde8b0756342b0214d245301c790919f012b5"
+  integrity sha512-hye0VU+C2IPoAp3n2Bst2pQ78Lkxk0YvS2uVWtiVqxPiy7xzmOxqeETCo7JzbkY2A5gBw6RX0TvIEDvNIdkKUg==
+  dependencies:
+    "@ember-template-lint/todo-utils" "^8.1.0"
     chalk "^4.1.1"
     date-fns "^2.21.1"
     ember-template-recast "^5.0.1"
