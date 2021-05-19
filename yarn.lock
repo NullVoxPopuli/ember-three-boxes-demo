@@ -1271,16 +1271,6 @@
   resolved "https://registry.npmjs.org/@ember-data/rfc395-data/-/rfc395-data-0.0.4.tgz#ecb86efdf5d7733a76ff14ea651a1b0ed1f8a843"
   integrity sha512-tGRdvgC9/QMQSuSuJV45xoyhI0Pzjm7A9o/MVVA3HakXIImJbbzx/k/6dO9CUEQXIyS2y0fW6C1XaYOG7rY0FQ==
 
-"@ember-template-lint/todo-utils@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@ember-template-lint/todo-utils/-/todo-utils-8.0.0.tgz#db18b2bbc26fb372062d827138b7e1bb659a30ae"
-  integrity sha512-bqULTNLWr93SRfM+MkPFN4qdYvdzmvwiPBaHpxQM67qnZ1BCs4Mr7zV8GF8OSmSKbyPNMAN2ZyxsPbNRbN6o3g==
-  dependencies:
-    "@types/eslint" "^7.2.7"
-    fs-extra "^9.1.0"
-    slash "^3.0.0"
-    tslib "^2.1.0"
-
 "@ember-template-lint/todo-utils@^8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@ember-template-lint/todo-utils/-/todo-utils-8.1.0.tgz#0fe8ef9ebd1948dea34d27d89a2e245687bb57d9"
@@ -1455,21 +1445,6 @@
     resolve-package-path "^1.2.2"
     semver "^7.3.2"
     typescript-memoize "^1.0.0-alpha.3"
-
-"@eslint/eslintrc@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.0.tgz#99cc0a0584d72f1df38b900fb062ba995f395547"
-  integrity sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
-  dependencies:
-    ajv "^6.12.4"
-    debug "^4.1.1"
-    espree "^7.3.0"
-    globals "^12.1.0"
-    ignore "^4.0.6"
-    import-fresh "^3.2.1"
-    js-yaml "^3.13.1"
-    minimatch "^3.0.4"
-    strip-json-comments "^3.1.1"
 
 "@eslint/eslintrc@^0.4.1":
   version "0.4.1"
@@ -1741,14 +1716,6 @@
   version "7.2.10"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.10.tgz#4b7a9368d46c0f8cd5408c23288a59aa2394d917"
   integrity sha512-kUEPnMKrqbtpCq/KTaGFFKAcz6Ethm2EjCoKIDaCmfRBWLbFuTcOJfTlorwbnboXBzahqWLgUp1BQeKHiJzPUQ==
-  dependencies:
-    "@types/estree" "*"
-    "@types/json-schema" "*"
-
-"@types/eslint@^7.2.7":
-  version "7.2.7"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.7.tgz#f7ef1cf0dceab0ae6f9a976a0a9af14ab1baca26"
-  integrity sha512-EHXbc1z2GoQRqHaAT7+grxlTJ3WE2YNeD6jlpPoRc83cCoThRY+NUWjCUZaYmk51OICkPXn2hhphcWcWXgNW0Q==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -4789,11 +4756,6 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-fns@^2.21.1:
-  version "2.21.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.1.tgz#679a4ccaa584c0706ea70b3fa92262ac3009d2b0"
-  integrity sha512-m1WR0xGiC6j6jNFAyW4Nvh4WxAi4JF4w9jRJwSI8nBmNcyZXPcP9VUQG+6gHQXAmqaGEKDKhOqAtENDC941UkA==
-
 date-fns@^2.21.3:
   version "2.21.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.3.tgz#8f5f6889d7a96bbcc1f0ea50239b397a83357f9b"
@@ -5324,39 +5286,6 @@ ember-cli-babel@^7.26.3:
     rimraf "^3.0.1"
     semver "^5.5.0"
 
-ember-cli-babel@^7.26.5:
-  version "7.26.5"
-  resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.26.5.tgz#59904d1d73b5c816167238024d18b85c8b51debc"
-  integrity sha512-XLMk59yNJneItn/hkJn+kHjnnszdfXWo1sP95C0kouSfPtIsUC3a/f/FW6c59D8koPANJOIHiHP3zUpTpKsnTA==
-  dependencies:
-    "@babel/core" "^7.12.0"
-    "@babel/helper-compilation-targets" "^7.12.0"
-    "@babel/plugin-proposal-class-properties" "^7.13.0"
-    "@babel/plugin-proposal-decorators" "^7.13.5"
-    "@babel/plugin-transform-modules-amd" "^7.13.0"
-    "@babel/plugin-transform-runtime" "^7.13.9"
-    "@babel/plugin-transform-typescript" "^7.13.0"
-    "@babel/polyfill" "^7.11.5"
-    "@babel/preset-env" "^7.12.0"
-    "@babel/runtime" "7.12.18"
-    amd-name-resolver "^1.3.1"
-    babel-plugin-debug-macros "^0.3.4"
-    babel-plugin-ember-data-packages-polyfill "^0.1.2"
-    babel-plugin-ember-modules-api-polyfill "^3.5.0"
-    babel-plugin-module-resolver "^3.2.0"
-    broccoli-babel-transpiler "^7.8.0"
-    broccoli-debug "^0.6.4"
-    broccoli-funnel "^2.0.2"
-    broccoli-source "^2.1.2"
-    clone "^2.1.2"
-    ember-cli-babel-plugin-helpers "^1.1.1"
-    ember-cli-version-checker "^4.1.0"
-    ensure-posix-path "^1.0.2"
-    fixturify-project "^1.10.0"
-    resolve-package-path "^3.1.0"
-    rimraf "^3.0.1"
-    semver "^5.5.0"
-
 ember-cli-babel@^7.26.6:
   version "7.26.6"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.26.6.tgz#322fbbd3baad9dd99e3276ff05bc6faef5e54b39"
@@ -5736,16 +5665,16 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.21.tgz#ea8b4ce03dc49125c26d35d41b92a6d1267e56bf"
-  integrity sha512-h8f+iezAVJPIZGp+AngdKy3ckU1qv8+rz1GLCL+0IWNFn1hDILhS47oetROAqFZtzwn/Wr4qUWFCgneDEPu/qA==
+ember-lifecycle-component@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.22.tgz#b9ac71a6f941c0512d61fdd802ff61cbb732645a"
+  integrity sha512-qhzc4nu6qb14x+kNE1aM3j3tCymg4TORkdPn1j4PGHLWbaMEcLmzDlNm3yOyXQ/SO23hqO3OIjFRWtCQIJQHPw==
   dependencies:
-    ember-cli-babel "^7.26.5"
+    ember-cli-babel "^7.26.6"
     ember-cli-htmlbars "^5.7.1"
     ember-cli-typescript "^4.1.0"
-    ember-template-lint "^3.3.1"
-    eslint "^7.25.0"
+    ember-template-lint "^3.4.2"
+    eslint "^7.26.0"
 
 ember-load-initializers@^2.1.2:
   version "2.1.2"
@@ -5857,25 +5786,6 @@ ember-source@3.27.1:
     resolve "^1.17.0"
     semver "^7.3.4"
     silent-error "^1.1.1"
-
-ember-template-lint@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.3.1.tgz#09825ec320f1491e9f17d40ad12f10340179f844"
-  integrity sha512-YONgtnXXhaeNu2kwrHmnqWh2a6aZlVO3aRCLqjGpt0sGwtiXteeT7L7slJdJRtTTxEG/2QdNVFLr4Uef4rIUbw==
-  dependencies:
-    "@ember-template-lint/todo-utils" "^8.0.0"
-    chalk "^4.1.1"
-    date-fns "^2.21.1"
-    ember-template-recast "^5.0.1"
-    find-up "^5.0.0"
-    fuse.js "^6.4.6"
-    get-stdin "^8.0.0"
-    globby "^11.0.3"
-    is-glob "^4.0.1"
-    micromatch "^4.0.4"
-    resolve "^1.20.0"
-    v8-compile-cache "^2.3.0"
-    yargs "^16.2.0"
 
 ember-template-lint@^3.4.2:
   version "3.4.2"
@@ -6153,49 +6063,6 @@ eslint-visitor-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-
-eslint@^7.25.0:
-  version "7.25.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.25.0.tgz#1309e4404d94e676e3e831b3a3ad2b050031eb67"
-  integrity sha512-TVpSovpvCNpLURIScDRB6g5CYu/ZFq9GfX2hLNIV4dSBKxIWojeDODvYl3t0k0VtMxYeR8OXPCFE5+oHMlGfhw==
-  dependencies:
-    "@babel/code-frame" "7.12.11"
-    "@eslint/eslintrc" "^0.4.0"
-    ajv "^6.10.0"
-    chalk "^4.0.0"
-    cross-spawn "^7.0.2"
-    debug "^4.0.1"
-    doctrine "^3.0.0"
-    enquirer "^2.3.5"
-    eslint-scope "^5.1.1"
-    eslint-utils "^2.1.0"
-    eslint-visitor-keys "^2.0.0"
-    espree "^7.3.1"
-    esquery "^1.4.0"
-    esutils "^2.0.2"
-    file-entry-cache "^6.0.1"
-    functional-red-black-tree "^1.0.1"
-    glob-parent "^5.0.0"
-    globals "^13.6.0"
-    ignore "^4.0.6"
-    import-fresh "^3.0.0"
-    imurmurhash "^0.1.4"
-    is-glob "^4.0.0"
-    js-yaml "^3.13.1"
-    json-stable-stringify-without-jsonify "^1.0.1"
-    levn "^0.4.1"
-    lodash "^4.17.21"
-    minimatch "^3.0.4"
-    natural-compare "^1.4.0"
-    optionator "^0.9.1"
-    progress "^2.0.0"
-    regexpp "^3.1.0"
-    semver "^7.2.1"
-    strip-ansi "^6.0.0"
-    strip-json-comments "^3.1.0"
-    table "^6.0.4"
-    text-table "^0.2.0"
-    v8-compile-cache "^2.0.3"
 
 eslint@^7.26.0:
   version "7.26.0"
