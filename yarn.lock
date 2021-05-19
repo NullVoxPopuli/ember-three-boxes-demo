@@ -5107,13 +5107,15 @@ ember-cache-primitive-polyfill@^1.0.1:
     ember-compatibility-helpers "^1.2.1"
     silent-error "^1.1.1"
 
-ember-cached-decorator-polyfill@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/ember-cached-decorator-polyfill/-/ember-cached-decorator-polyfill-0.1.1.tgz#988c06808666cbffd621e9c6baa51b7c599c6a05"
-  integrity sha512-mMdzPQuR4D6hNXkdVFfIWTQbBERNFpm5G36sC4DzogQYDcFKQf5QXLVCmK+3KsEKjJOwPeXmClMQTNUfgtb5Ig==
+ember-cached-decorator-polyfill@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/ember-cached-decorator-polyfill/-/ember-cached-decorator-polyfill-0.1.2.tgz#e0fbd188494c2c43c3891b6b8da32a8fdde17590"
+  integrity sha512-2cDXqQMWANyyfPGvzhnNr9qhJVu3ETsdihTKpcD5g5KSzFrylkXkVkopoRPn2+2/2oyb5iWH6f8+/h5h/ih48Q==
   dependencies:
+    "@glimmer/tracking" "^1.0.4"
     ember-cache-primitive-polyfill "^1.0.1"
     ember-cli-babel "^7.21.0"
+    ember-cli-babel-plugin-helpers "^1.1.1"
 
 ember-classic-decorator@^2.0.0:
   version "2.0.0"
