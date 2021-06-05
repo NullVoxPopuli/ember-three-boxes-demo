@@ -52,7 +52,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "3.27.3",
     "ember-template-lint": "^3.4.2",
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "eslint-plugin-ember": "^10.5.0",
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
