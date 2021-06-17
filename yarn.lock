@@ -5561,10 +5561,10 @@ ember-cli-typescript@^4.1.0:
     stagehand "^1.0.0"
     walk-sync "^2.2.0"
 
-ember-cli-typescript@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-4.2.0.tgz#e748f08b490500d757345b8520cc13804b923085"
-  integrity sha512-kqbzGqgKDX7ZIA0PQI1/E6OWqWMVT7fgSZ3Q8UsJggi6ljKCWgHycKuTD+aRYSwo8gmq3D5AWx9pj1GOhtiAWA==
+ember-cli-typescript@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-4.2.1.tgz#54d08fc90318cc986f3ea562f93ce58a6cc4c24d"
+  integrity sha512-0iKTZ+/wH6UB/VTWKvGuXlmwiE8HSIGcxHamwNhEC5x1mN3z8RfvsFZdQWYUzIWFN2Tek0gmepGRPTwWdBYl/A==
   dependencies:
     ansi-to-html "^0.6.15"
     broccoli-stew "^3.0.0"
@@ -5748,14 +5748,14 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.npmjs.org/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-lifecycle-component@^1.0.24:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.24.tgz#405fc186e0eefb6e45393016478f3a213d5d24e8"
-  integrity sha512-GIzSyrLpWxVfD1UWYjCsfCqSl5ymX8x3qtNbD2QR/BYVBZPRHIutMktPlz0Jl+HdeBK88jgc4m5oQWOywy19jA==
+ember-lifecycle-component@^1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/ember-lifecycle-component/-/ember-lifecycle-component-1.0.25.tgz#83109e8bd612d8b4ff14dcb4126a1231c458c612"
+  integrity sha512-lO1B0NEiEUN1efbKqynal8eJG638iaSbsLh8c0pisiyjJKVu8zM6AwRB5UmqMt8ayRS4wwGUeKdbqW1Z8pdnUg==
   dependencies:
     ember-cli-babel "^7.26.6"
     ember-cli-htmlbars "^5.7.1"
-    ember-cli-typescript "^4.2.0"
+    ember-cli-typescript "^4.2.1"
 
 ember-load-initializers@^2.1.2:
   version "2.1.2"
