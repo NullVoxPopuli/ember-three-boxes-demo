@@ -11389,10 +11389,10 @@ text-table@^0.2.0:
   resolved "https://registry.npmjs.org/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
 
-three@^0.132.0:
-  version "0.132.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.132.0.tgz#7c3197608c8ba1e9570ed078e1060f45e48d7fd3"
-  integrity sha512-kv4WeP3O5/8mcHyuGYnqBQYdEfzSz9kEkq4H/9J966epNlGSVJ8gYC3SwT9qIITdgC0OvLr3zPltCS4dUyg2eg==
+three@^0.132.1:
+  version "0.132.1"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.132.1.tgz#0e37d4a875919bffb3b7ae344e4012234aa4b695"
+  integrity sha512-yb5Y5v5b//V7kWZigVJWd8x6+1iZhQoYPOdkpSE9JEP1/uKBkdbBazWZGlT4B5+/MkGeCCFWIewz46GtFNhPTg==
 
 through2@^2.0.0:
   version "2.0.5"
