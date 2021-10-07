@@ -48,7 +48,7 @@
     "ember-lifecycle-component": "^1.0.25",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^1.0.0",
-    "ember-qunit": "^5.1.4",
+    "ember-qunit": "^5.1.5",
     "ember-resolver": "^8.0.3",
     "ember-source": "3.28.1",
     "ember-template-lint": "^3.9.0",
