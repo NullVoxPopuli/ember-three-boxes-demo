@@ -11942,12 +11942,12 @@ tr46@^2.0.2:
   dependencies:
     punycode "^2.1.1"
 
-tracked-built-ins@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/tracked-built-ins/-/tracked-built-ins-2.0.0.tgz#fb8ad7f6ace27595b58e64df21fe308d82416701"
-  integrity sha512-+aB1jcGmDxi/0aMqGxL5KW3BUivrIU1bzgJW8yUAfnkxvdc1TBLmMOWAUFouD6ZTKH6w3eIrks18uLuASFCdcw==
+tracked-built-ins@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tracked-built-ins/-/tracked-built-ins-2.0.1.tgz#9d6d0db29ad187e8533591f0e891e15b7a2259c5"
+  integrity sha512-v0DwPVNm3zA4cmJLpcBJxJfKefN6ldhkc8l5YA+cWHq7kI8WMUcXjIXgl/AIxmt1SoO1bwPdpikPRHHrIBDtFQ==
   dependencies:
-    ember-cli-babel "^7.26.6"
+    ember-cli-babel "^7.26.10"
     ember-cli-typescript "^4.1.0"
     ember-tracked-storage-polyfill "^1.0.0"
     tracked-maps-and-sets "^3.0.2"
