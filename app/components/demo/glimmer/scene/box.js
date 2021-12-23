@@ -1,9 +1,11 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
+import {setComponentTemplate} from '@ember/component';
+import {hbs} from 'ember-cli-htmlbars';
+import {action} from '@ember/object';
 
 import THREE from 'three';
 
-let geometry = new THREE.BoxGeometry( 2, 2, 2 );
+let geometry = new THREE.BoxGeometry(2, 2, 2);
 let material = new THREE.MeshNormalMaterial();
 
 export default class SceneBoxComponent extends Component {
@@ -29,3 +31,9 @@ export default class SceneBoxComponent extends Component {
     this.args.scene.remove(this.mesh);
   }
 }
+
+setComponentTemplate(hbs`
+ {{ (this.updateRotation @rotation) }}
+`,
+  SceneBoxComponent
+);
