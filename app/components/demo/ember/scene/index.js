@@ -1,7 +1,10 @@
 // eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
 import { action } from '@ember/object';
-import classic from 'ember-classic-decorator';
+import { setComponentTemplate } from '@ember/component';
+import { hbs } from 'ember-cli-htmlbars';
+import { registerDestructor } from '@ember/destroyable';
+import { modifier } from 'ember-could-get-used-to-this';
 
 import THREE from 'three';
 
@@ -14,7 +17,6 @@ import THREE from 'three';
  *       This is not an issue for @glimmer/component, only @ember/component
  *
  */
-@classic
 export default class SceneComponent extends Component {
   tagName = '';
   element = undefined;
@@ -28,17 +30,21 @@ export default class SceneComponent extends Component {
       antialias: false,
     });
     this.threeRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    registerDestructor(this, () => {
+      this.threeRenderer.renderLists.dispose();
+      this.threeRenderer.dispose();
+    });
   }
 
-  @action
-  setElement(element) {
+  setElement = modifier((element) => {
     this.element = element;
     this.element.appendChild(this.threeRenderer.domElement);
 
     if (this.camera) {
       this.onInit(this.renderScene);
     }
-  }
+  });
 
   @action
   setCamera(camera) {
@@ -53,11 +59,22 @@ export default class SceneComponent extends Component {
   renderScene() {
     this.threeRenderer.render(this.scene, this.camera);
   }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.threeRenderer.renderLists.dispose();
-    this.threeRenderer.dispose();
-    // this.scene.dispose();
-  }
 }
+
+setComponentTemplate(
+  hbs`
+<div {{this.setElement}}></div>
+
+{{yield
+  (hash
+    DirectionalLight=(component 'demo/ember/scene/directional-light' scene=this.scene)
+    PerspectiveCamera=(component 'demo/ember/scene/perspective-camera'
+      scene=this.scene
+      setCamera=this.setCamera
+    )
+    Box=(component 'demo/ember/scene/box' scene=this.scene render=this.render)
+  )
+}}
+  `,
+  SceneComponent
+);

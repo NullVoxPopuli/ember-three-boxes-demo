@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { setComponentTemplate } from '@ember/component';
 import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@ember/object';
+import { registerDestructor } from '@ember/destroyable';
 
 import THREE from 'three';
 
@@ -19,17 +20,16 @@ export default class SceneBoxComponent extends Component {
     this.mesh.position.set(0, 0, 0);
 
     args.scene.add(this.mesh);
+
+    registerDestructor(this, () => {
+      args.scene.remove(this.mesh);
+    });
   }
 
   @action
   updateRotation(rotation) {
     let r = rotation.r;
     this.mesh.rotation.set(r.x, r.y, r.z);
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.args.scene.remove(this.mesh);
   }
 }
 

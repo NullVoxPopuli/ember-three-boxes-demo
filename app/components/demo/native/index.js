@@ -1,5 +1,9 @@
 import Component from '@glimmer/component';
+import { setComponentTemplate } from '@ember/component';
+import { hbs } from 'ember-cli-htmlbars';
+import { registerDestructor } from '@ember/destroyable';
 import { inject as service } from '@ember/service';
+import { modifier } from 'ember-could-get-used-to-this';
 import { action } from '@ember/object';
 
 import { WebGlHelper } from './web-gl-helper';
@@ -32,8 +36,7 @@ export default class DemoComponent extends Component {
     this.renderer.syncBoxes(newRotations(this.appState.count));
   }
 
-  @action
-  setup(element) {
+  setup = modifier((element) => {
     this.renderer = new WebGlHelper({
       container: element,
       stats: this.stats,
@@ -41,10 +44,9 @@ export default class DemoComponent extends Component {
 
     this.renderer.animate();
     this.onUpdate();
-  }
 
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.renderer.willDestroy();
-  }
+    registerDestructor(this, () => this.renderer.willDestroy());
+  });
 }
+
+setComponentTemplate(hbs`<main {{this.setup}}></main>`, DemoComponent);
