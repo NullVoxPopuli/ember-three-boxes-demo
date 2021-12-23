@@ -1,7 +1,7 @@
 import THREE from 'three';
 
 // Static things that won't change
-let geometry = new THREE.BoxGeometry( 2, 2, 2 );
+let geometry = new THREE.BoxGeometry(2, 2, 2);
 let material = new THREE.MeshNormalMaterial();
 
 export class WebGlHelper {
@@ -10,17 +10,22 @@ export class WebGlHelper {
 
   scene = new THREE.Scene();
   light = new THREE.DirectionalLight(0xffffff, 1);
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-  renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
+  camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
 
   constructor({ container, stats }) {
     this.element = container;
 
     // fov, ratio, zNear, zFar
     this.camera.position.set(0, 0, 3.2);
-		this.light.position.set( -5, 0, -10 ).normalize();
+    this.light.position.set(-5, 0, -10).normalize();
     this.scene.add(this.light);
-    this.renderer.setSize( window.innerWidth, window.innerHeight );
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.element.appendChild(this.renderer.domElement);
 
     this.animate = this.animate.bind(this);

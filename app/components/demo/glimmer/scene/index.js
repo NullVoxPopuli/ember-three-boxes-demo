@@ -10,7 +10,7 @@ export default class SceneComponent extends Component {
     super(owner, args);
 
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
@@ -39,6 +39,7 @@ export default class SceneComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.renderer.renderLists.dispose();
     this.renderer.dispose();
   }

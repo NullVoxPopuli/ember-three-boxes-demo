@@ -10,7 +10,7 @@ export default class SceneComponent extends LifeCycleComponent {
     super(owner, args);
 
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 

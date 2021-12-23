@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
-import {setComponentTemplate} from '@ember/component';
-import {hbs} from 'ember-cli-htmlbars';
-import {action} from '@ember/object';
+import { setComponentTemplate } from '@ember/component';
+import { hbs } from 'ember-cli-htmlbars';
+import { action } from '@ember/object';
 
 import THREE from 'three';
 
@@ -28,11 +28,13 @@ export default class SceneBoxComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.args.scene.remove(this.mesh);
   }
 }
 
-setComponentTemplate(hbs`
+setComponentTemplate(
+  hbs`
  {{ (this.updateRotation @rotation) }}
 `,
   SceneBoxComponent

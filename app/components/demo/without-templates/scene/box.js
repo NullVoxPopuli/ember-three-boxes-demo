@@ -22,9 +22,8 @@ export default class Box extends Component {
   });
 }
 
-const geometry = new THREE.BoxGeometry( 2, 2, 2 );
+const geometry = new THREE.BoxGeometry(2, 2, 2);
 const material = new THREE.MeshNormalMaterial();
-
 
 // Maybe this needs to be an effect?
 // a resource doesn't seem to update when I want.

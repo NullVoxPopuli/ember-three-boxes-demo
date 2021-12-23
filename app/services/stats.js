@@ -1,6 +1,6 @@
-import Service from "@ember/service";
-import { action } from "@ember/object";
-import Stats from "stats.js";
+import Service from '@ember/service';
+import { action } from '@ember/object';
+import Stats from 'stats.js';
 
 // https://github.com/mrdoob/stats.js
 export default class StatsService extends Service {
@@ -14,7 +14,7 @@ export default class StatsService extends Service {
     stats.showPanel(2);
 
     // is this the plural?
-    let canvaii = stats.dom.querySelectorAll('canvas')
+    let canvaii = stats.dom.querySelectorAll('canvas');
 
     for (let canvas of canvaii) {
       canvas.style.display = 'block';

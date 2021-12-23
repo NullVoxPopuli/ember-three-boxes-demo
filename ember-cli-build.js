@@ -1,32 +1,11 @@
-"use strict";
+'use strict';
 
-const EmberApp = require("ember-cli/lib/broccoli/ember-app");
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
-  let environment = EmberApp.env();
-  let isProduction = environment === "production";
-  let options = {
-    sourcemaps: {
-      enabled: false,
-    },
-    "ember-cli-babel": {
-      includePolyfill: false,
-      disablePresetEnv: true,
-      disableDebugTooling: isProduction,
-      includeExternalHelpers: true,
-      // Will not build if uncommented:
-      // disableEmberModulesAPIPolyfill: true
-      // compileModules: false,
-    },
-  };
-
-  // Helpful for running production builds locally.
-  // Terser takes is the longest step
-  if (process.env.DISABLE_TERSER) {
-    options['ember-cli-terser'] = { enabled: false };
-  }
-
-  let app = new EmberApp(defaults, options);
+  let app = new EmberApp(defaults, {
+    // Add options here
+  });
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

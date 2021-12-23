@@ -1,16 +1,16 @@
 // eslint-disable-next-line ember/no-classic-components
-import Component from "@ember/component";
-import { action } from "@ember/object";
-import classic from "ember-classic-decorator";
+import Component from '@ember/component';
+import { action } from '@ember/object';
+import classic from 'ember-classic-decorator';
 
-import THREE from "three";
+import THREE from 'three';
 
 let geometry = new THREE.BoxGeometry(2, 2, 2);
 let material = new THREE.MeshNormalMaterial();
 
 @classic
 export default class SceneBoxComponent extends Component {
-  tagName = "";
+  tagName = '';
 
   init(...args) {
     super.init(...args);
@@ -38,6 +38,7 @@ export default class SceneBoxComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.scene.remove(this.mesh);
   }
 }

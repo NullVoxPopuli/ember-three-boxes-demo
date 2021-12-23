@@ -1,8 +1,8 @@
-import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
-import { action } from "@ember/object";
+import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
-import { WebGlHelper } from "./web-gl-helper";
+import { WebGlHelper } from './web-gl-helper';
 
 function random() {
   return Math.random() * 360;
@@ -22,7 +22,7 @@ export default class DemoComponent extends Component {
   constructor() {
     super(...arguments);
 
-    this.router.on("routeDidChange", () => {
+    this.router.on('routeDidChange', () => {
       this.onUpdate();
     });
   }
@@ -44,6 +44,7 @@ export default class DemoComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.renderer.willDestroy();
   }
 }

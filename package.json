@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "engines": {
-    "node": "8.* || >= 10.*"
+    "node": "12.* || 14.* || >= 16"
   },
   "ember": {
     "edition": "octane"
@@ -19,8 +19,12 @@
   "scripts": {
     "deploy": "./scripts/deploy.sh",
     "build": "ember build --environment=production",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
+    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
-    "lint:js": "eslint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "ember test"
   },
@@ -47,17 +51,22 @@
     "ember-functions-as-helper-polyfill": "^1.0.10",
     "ember-lifecycle-component": "^1.0.25",
     "ember-load-initializers": "^2.1.2",
-    "ember-maybe-import-regenerator": "^1.0.0",
     "ember-qunit": "^5.1.5",
     "ember-resolver": "^8.0.3",
     "ember-source": "4.0.1",
     "ember-template-lint": "^3.15.0",
     "ember-tracked-effects-placeholder": "^1.1.2",
-    "eslint": "^8.5.0",
+    "eslint": "^7.5.0",
+
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-ember": "^10.5.8",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-qunit": "^7.2.0",
     "loader.js": "^4.7.0",
     "qunit": "^2.17.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
     "qunit-dom": "^2.0.0",
     "three": "^0.135.0",
     "tracked-built-ins": "^2.0.1",

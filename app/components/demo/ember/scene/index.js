@@ -1,9 +1,9 @@
 // eslint-disable-next-line ember/no-classic-components
-import Component from "@ember/component";
-import { action } from "@ember/object";
-import classic from "ember-classic-decorator";
+import Component from '@ember/component';
+import { action } from '@ember/object';
+import classic from 'ember-classic-decorator';
 
-import THREE from "three";
+import THREE from 'three';
 
 /**
  * NOTE: the following are built-in APIs and collide with common THREE
@@ -16,7 +16,7 @@ import THREE from "three";
  */
 @classic
 export default class SceneComponent extends Component {
-  tagName = "";
+  tagName = '';
   element = undefined;
 
   init(owner, args) {
@@ -55,6 +55,7 @@ export default class SceneComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.threeRenderer.renderLists.dispose();
     this.threeRenderer.dispose();
     // this.scene.dispose();
