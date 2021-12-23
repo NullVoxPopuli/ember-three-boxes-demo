@@ -8,7 +8,7 @@ const defaults = {
   x: 0,
   y: 0,
   z: 0,
-}
+};
 
 export default class ScenePerspectiveCameraComponent extends Component {
   constructor(owner, args) {

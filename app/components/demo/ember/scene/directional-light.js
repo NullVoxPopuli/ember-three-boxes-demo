@@ -1,9 +1,7 @@
 // eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
-import classic from 'ember-classic-decorator';
 import THREE from 'three';
 
-@classic
 export default class SceneDirectionalLightComponent extends Component {
   tagName = '';
 

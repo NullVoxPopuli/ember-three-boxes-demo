@@ -1,5 +1,5 @@
-import { tracked } from "@glimmer/tracking";
-import { TrackedObject, TrackedArray } from "tracked-built-ins";
+import { tracked } from '@glimmer/tracking';
+import { TrackedObject, TrackedArray } from 'tracked-built-ins';
 
 export function random() {
   return Math.random() * 360;

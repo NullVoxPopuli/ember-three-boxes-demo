@@ -1,6 +1,6 @@
-import Service, { inject as service } from "@ember/service";
-import { cached } from "@glimmer/tracking";
-import { newRotations } from "../utils/utils";
+import Service, { inject as service } from '@ember/service';
+import { cached } from '@glimmer/tracking';
+import { newRotations } from '../utils/utils';
 
 const DEFAULT_COUNT = 2;
 

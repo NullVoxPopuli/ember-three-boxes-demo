@@ -1,7 +1,6 @@
 // eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
 import THREE from 'three';
-import classic from 'ember-classic-decorator';
 
 const defaults = {
   fov: 75,
@@ -10,9 +9,8 @@ const defaults = {
   x: 0,
   y: 0,
   z: 0,
-}
+};
 
-@classic
 export default class ScenePerspectiveCameraComponent extends Component {
   tagName = '';
 

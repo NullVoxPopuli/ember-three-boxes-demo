@@ -1,5 +1,8 @@
 import Component from '@glimmer/component';
+import { setComponentTemplate } from '@ember/component';
+import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@ember/object';
+import { modifier } from 'ember-could-get-used-to-this';
 
 import THREE from 'three';
 
@@ -10,19 +13,18 @@ export default class SceneComponent extends Component {
     super(owner, args);
 
     this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer( { alpha: true, antialias: false } );
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  @action
-  setElement(element) {
+  setElement = modifier((element) => {
     this.element = element;
     this.element.appendChild(this.renderer.domElement);
 
     if (this.camera) {
       this.args.onInit(this.render);
     }
-  }
+  });
 
   @action
   setCamera(camera) {
@@ -39,7 +41,26 @@ export default class SceneComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.renderer.renderLists.dispose();
     this.renderer.dispose();
   }
 }
+
+setComponentTemplate(
+  hbs`
+  <div {{this.setElement}}></div>
+
+  {{yield
+    (hash
+      DirectionalLight=(component 'demo/glimmer/scene/directional-light' scene=this.scene)
+      PerspectiveCamera=(component 'demo/glimmer/scene/perspective-camera'
+        scene=this.scene
+        setCamera=this.setCamera
+      )
+      Box=(component 'demo/glimmer/scene/box' scene=this.scene)
+    )
+  }}
+  `,
+  SceneComponent
+);
