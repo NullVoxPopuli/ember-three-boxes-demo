@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { setComponentTemplate } from '@ember/component';
+import { registerDestructor } from '@ember/destroyable';
 import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@ember/object';
 import { modifier } from 'ember-could-get-used-to-this';
@@ -15,6 +16,11 @@ export default class SceneComponent extends Component {
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+    registerDestructor(this, () => {
+      this.renderer.renderLists.dispose();
+      this.renderer.dispose();
+    });
   }
 
   setElement = modifier((element) => {
@@ -38,12 +44,6 @@ export default class SceneComponent extends Component {
   @action
   render() {
     this.renderer.render(this.scene, this.camera);
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.renderer.renderLists.dispose();
-    this.renderer.dispose();
   }
 }
 

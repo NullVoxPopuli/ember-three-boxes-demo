@@ -1,6 +1,9 @@
 // eslint-disable-next-line ember/no-classic-components
 import Component from '@ember/component';
 import { action } from '@ember/object';
+import { registerDestructor } from '@ember/destroyable';
+import { setComponentTemplate } from '@ember/component';
+import { hbs } from 'ember-cli-htmlbars';
 
 import THREE from 'three';
 
@@ -14,29 +17,25 @@ export default class SceneBoxComponent extends Component {
     super.init(...args);
 
     this.mesh = new THREE.Mesh(geometry, material);
-
-    let { rotation: r } = this;
-    this.updateRotation([r.x, r.y, r.z]);
     this.mesh.position.set(0, 0, 0);
+    this.updateRotation(this.rotation);
 
     this.scene.add(this.mesh);
-  }
 
-  // eslint-disable-next-line ember/no-component-lifecycle-hooks
-  didReceiveAttrs() {
-    super.didReceiveAttrs();
-
-    let { rotation: r } = this;
-    this.updateRotation([r.x, r.y, r.z]);
+    registerDestructor(this, () => {
+      this.scene.remove(this.mesh);
+    });
   }
 
   @action
-  updateRotation(rotation) {
-    this.mesh.rotation.set(...rotation);
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.scene.remove(this.mesh);
+  updateRotation(r) {
+    this.mesh.rotation.set(r.x, r.y, r.z);
   }
 }
+
+setComponentTemplate(
+  hbs`
+ {{ (this.updateRotation @rotation) }}
+`,
+  SceneBoxComponent
+);

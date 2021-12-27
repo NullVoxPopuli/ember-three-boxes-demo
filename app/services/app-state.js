@@ -1,6 +1,7 @@
 import Service, { inject as service } from '@ember/service';
 import { cached } from '@glimmer/tracking';
 import { newRotations } from '../utils/utils';
+import { deepTracked } from 'ember-deep-tracked';
 
 const DEFAULT_COUNT = 2;
 
@@ -9,7 +10,7 @@ export default class AppStateService extends Service {
 
   @cached
   get rotations() {
-    return newRotations(this.count);
+    return deepTracked(newRotations(this.count));
   }
 
   get count() {

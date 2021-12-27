@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": "14.* || >= 16"
   },
   "ember": {
     "edition": "octane"
@@ -26,6 +26,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
+    "start:prod": "ember serve --environment=production",
     "test": "ember test"
   },
   "devDependencies": {
@@ -72,6 +73,7 @@
     "webpack": "^5.65.0"
   },
   "dependencies": {
+    "ember-deep-tracked": "^1.3.4",
     "stats.js": "^0.17.0"
   }
 }
