@@ -73,7 +73,7 @@
     "webpack": "^5.65.0"
   },
   "dependencies": {
-    "ember-deep-tracked": "^1.3.4",
+    "ember-deep-tracked": "^1.3.5",
     "stats.js": "^0.17.0"
   }
 }

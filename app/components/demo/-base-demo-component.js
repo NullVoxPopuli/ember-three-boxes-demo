@@ -35,14 +35,15 @@ export default class DemoComponent extends Component {
     function loop() {
       this.stats.begin();
       let rotations = this.appState.rotations;
-      this.frame = requestAnimationFrame(boundCallback);
+      requestAnimationFrame(boundCallback);
 
       for (let i = 0; i < rotations.length; i++) {
-        let rotation = rotations[i];
-
-        rotation.x += ROTATION_SPEED;
-        rotation.y += ROTATION_SPEED;
-        rotation.z += ROTATION_SPEED;
+        rotations[i].x += ROTATION_SPEED;
+        rotations[i].y += ROTATION_SPEED;
+        rotations[i].z += ROTATION_SPEED;
+        // rotations[i][0] += ROTATION_SPEED;
+        // rotations[i][1] += ROTATION_SPEED;
+        // rotations[i][2] += ROTATION_SPEED;
       }
 
       updateCanvas();

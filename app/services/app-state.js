@@ -1,6 +1,5 @@
 import Service, { inject as service } from '@ember/service';
 import { cached } from '@glimmer/tracking';
-import { newRotations } from '../utils/utils';
 import { deepTracked } from 'ember-deep-tracked';
 
 const DEFAULT_COUNT = 2;
@@ -25,4 +24,19 @@ export default class AppStateService extends Service {
 
     return DEFAULT_COUNT;
   }
+}
+
+function random() {
+  return Math.random() * 360;
+}
+
+function newRotations(num = 20) {
+  return (
+    Array(num)
+      .fill()
+      // Only arrays
+      // .map(() => [random(), random(), random()])
+      // Maybe more meaningful than just arrays
+      .map(() => ({ x: random(), y: random(), z: random() }))
+  );
 }

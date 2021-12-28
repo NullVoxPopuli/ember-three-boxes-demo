@@ -18,7 +18,7 @@ export default class SceneBoxComponent extends Component {
 
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.position.set(0, 0, 0);
-    this.updateRotation(this.rotation);
+    this.updateRotation();
 
     this.scene.add(this.mesh);
 
@@ -28,14 +28,15 @@ export default class SceneBoxComponent extends Component {
   }
 
   @action
-  updateRotation(r) {
-    this.mesh.rotation.set(r.x, r.y, r.z);
+  updateRotation() {
+    // this.mesh.rotation.set(...this.rotation);
+    this.mesh.rotation.set(...Object.values(this.rotation));
   }
 }
 
 setComponentTemplate(
   hbs`
- {{ (this.updateRotation @rotation) }}
+ {{ (this.updateRotation) }}
 `,
   SceneBoxComponent
 );
