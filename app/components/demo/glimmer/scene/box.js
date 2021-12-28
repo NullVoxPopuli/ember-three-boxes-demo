@@ -26,8 +26,8 @@ export default class SceneBoxComponent extends Component {
 
   @action
   updateRotation() {
-    let rotation = [...this.args.rotation];
-    this.mesh.rotation.set(...rotation);
+    // this.mesh.rotation.set(...this.args.rotation);
+    this.mesh.rotation.set(...Object.values(this.args.rotation));
   }
 }
 

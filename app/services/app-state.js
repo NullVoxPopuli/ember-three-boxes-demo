@@ -31,7 +31,12 @@ function random() {
 }
 
 function newRotations(num = 20) {
-  return Array(num)
-    .fill()
-    .map(() => [random(), random(), random()]);
+  return (
+    Array(num)
+      .fill()
+      // Only arrays
+      // .map(() => [random(), random(), random()])
+      // Maybe more meaningful than just arrays
+      .map(() => ({ x: random(), y: random(), z: random() }))
+  );
 }
