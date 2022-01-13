@@ -1261,19 +1261,6 @@
     resolve "^1.8.1"
     semver "^7.3.2"
 
-"@embroider/macros@^0.50.0":
-  version "0.50.0"
-  resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.50.0.tgz#7a3676f2fe983316b9470c5422c099d7cfeebfb2"
-  integrity sha512-9yek4uRrWPd/pvQg1amAr8GJSTv1tcGhsbvLXjUnAaJfHZQ4OlycfpXUsSGujqPI3DkOOL6TvPl0jQaEooE6cQ==
-  dependencies:
-    "@embroider/shared-internals" "0.50.0"
-    assert-never "^1.2.1"
-    ember-cli-babel "^7.26.6"
-    find-up "^5.0.0"
-    lodash "^4.17.21"
-    resolve "^1.20.0"
-    semver "^7.3.2"
-
 "@embroider/macros@^0.50.1":
   version "0.50.1"
   resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.50.1.tgz#ce60d55bbaaa515e532e8e929713bce577713be7"
@@ -1286,19 +1273,6 @@
     lodash "^4.17.21"
     resolve "^1.20.0"
     semver "^7.3.2"
-
-"@embroider/shared-internals@0.50.0":
-  version "0.50.0"
-  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-0.50.0.tgz#e8f7474af6b8896a91da4ec700810587fa61f7c2"
-  integrity sha512-pu4YQGyoTsz+KWGTKwMyCMzhoJkUI9PuWiivRilKsywiFt8Ke4ns+nFNnHtPqPKChR72xY2qFjWOP5yAqZq3kw==
-  dependencies:
-    babel-import-util "^1.1.0"
-    ember-rfc176-data "^0.3.17"
-    fs-extra "^9.1.0"
-    lodash "^4.17.21"
-    resolve-package-path "^4.0.1"
-    semver "^7.3.5"
-    typescript-memoize "^1.0.1"
 
 "@embroider/shared-internals@0.50.1":
   version "0.50.1"
@@ -4910,12 +4884,12 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-functions-as-helper-polyfill@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/ember-functions-as-helper-polyfill/-/ember-functions-as-helper-polyfill-1.0.11.tgz#8bd25a0b0ef58f5f9d2dc8d3e4217533ef640d59"
-  integrity sha512-krJy9+HieGq3nWHhDW7V212HOtQYhB7QezctuERIi5AaG4CAL+ldshEqOTN1EuHgvhpAy4PaMhUQXKW3FS0Nbg==
+ember-functions-as-helper-polyfill@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/ember-functions-as-helper-polyfill/-/ember-functions-as-helper-polyfill-1.0.12.tgz#68a6d02f8c71f5b2aad103e0d1a0e084aef48d69"
+  integrity sha512-DbPjwB2u1Zo6psCsNbOHaXO4J58OTSsoLkJLli/O/Oncxoh/dv/W92CUJ+xFAkT1KZosy3OHNH0xGvPTjhhpdw==
   dependencies:
-    "@embroider/macros" "^0.50.0"
+    "@embroider/macros" "^0.50.1"
     "@glimmer/tracking" "^1.0.4"
     ember-auto-import "^2.2.4"
     ember-cli-babel "^7.26.11"
