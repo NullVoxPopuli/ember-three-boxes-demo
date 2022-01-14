@@ -48,7 +48,7 @@
     "ember-cli-terser": "^4.0.2",
     "ember-could-get-used-to-this": "^1.0.1",
     "ember-export-application-global": "^2.0.1",
-    "ember-functions-as-helper-polyfill": "^1.0.12",
+    "ember-functions-as-helper-polyfill": "^1.0.13",
     "ember-lifecycle-component": "^1.0.25",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
