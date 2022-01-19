@@ -1900,10 +1900,37 @@
     resolve "^1.20.0"
     semver "^7.3.2"
 
+"@embroider/macros@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-1.0.0.tgz#2dfab550ba4e03cbf6e3524759949749ced98cc2"
+  integrity sha512-RutDJ27j1eFQulyv83yJm27oSypsMd/UZyy62Q0NU00TIsIgQPCXaDiGIONWcJuAAVbtBRP3X4LMvaBAeq5g+A==
+  dependencies:
+    "@embroider/shared-internals" "1.0.0"
+    assert-never "^1.2.1"
+    babel-import-util "^1.1.0"
+    ember-cli-babel "^7.26.6"
+    find-up "^5.0.0"
+    lodash "^4.17.21"
+    resolve "^1.20.0"
+    semver "^7.3.2"
+
 "@embroider/shared-internals@0.50.2", "@embroider/shared-internals@^0.50.0":
   version "0.50.2"
   resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-0.50.2.tgz#567c5451db31a1f3edc2f64376ce5a0dcaaabacb"
   integrity sha512-l3SKn1YdxTFBjY3ylYTLHxFY0dG2XxIsjbtZt7Mm6QyZFssWBDg3oWYwBoUpkw/ysjNJf8IcI7reXhB23WXwDw==
+  dependencies:
+    babel-import-util "^1.1.0"
+    ember-rfc176-data "^0.3.17"
+    fs-extra "^9.1.0"
+    lodash "^4.17.21"
+    resolve-package-path "^4.0.1"
+    semver "^7.3.5"
+    typescript-memoize "^1.0.1"
+
+"@embroider/shared-internals@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-1.0.0.tgz#b081708ac79e4582f17ba0f3e3796e6612a8976c"
+  integrity sha512-Vx3dmejJxI5MG/qC7or3EUZY0AZBSBNOAR50PYotX3LxUSb4lAm5wISPnFbwEY4bbo2VhL/6XtWjMv8ZMcaP+g==
   dependencies:
     babel-import-util "^1.1.0"
     ember-rfc176-data "^0.3.17"
@@ -5535,12 +5562,12 @@ ember-could-get-used-to-this@^1.0.1:
     ember-cli-babel "^7.22.1"
     ember-cli-htmlbars "^4.2.0"
 
-ember-deep-tracked@^1.3.10:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/ember-deep-tracked/-/ember-deep-tracked-1.3.10.tgz#66eefbbaef350d49cdadcf8728c74451e1914211"
-  integrity sha512-2sry96NTKa31qvTseHU2j7S+Km656VTxKDTnDm8uJ+k7rI6/ONIcNP4janBYuuIXu3xgQwGLvNX9b95BNYGp4Q==
+ember-deep-tracked@^1.3.11:
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/ember-deep-tracked/-/ember-deep-tracked-1.3.11.tgz#ccea12b9613ed1fc242a481291cffcc3f5552e69"
+  integrity sha512-F9uVjLAd7btaien3QCTbOucCqH5BT4J+u8PWRa7B1AGxA49yBJEwSU2Cpw2jxW1kpaFtb13Ii9Cq4YpKbqE0Jw==
   dependencies:
-    "@embroider/macros" "^0.50.2"
+    "@embroider/macros" "^1.0.0"
     "@glimmer/tracking" "^1.0.4"
     ember-cli-babel "^7.26.11"
     ember-cli-htmlbars "^6.0.1"
