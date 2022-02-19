@@ -58,7 +58,7 @@
     "ember-template-lint": "^4.1.0",
     "ember-tracked-effects-placeholder": "^1.1.2",
     "eslint": "^7.5.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-ember": "^10.5.9",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
