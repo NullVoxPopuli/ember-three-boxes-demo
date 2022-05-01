@@ -5804,10 +5804,10 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
-ember-functions-as-helper-polyfill@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ember-functions-as-helper-polyfill/-/ember-functions-as-helper-polyfill-2.1.0.tgz#7ad94f54ffc47d1aaeca39be26e9db0809a2e34a"
-  integrity sha512-l6D71lDQomoVcldJ0FnB73+yfNvaoLuSLyf9GNag62Tb3Ak+dAIeodTzDz0S8JakxM/epy1kzmEz9Ck1CgNsIQ==
+ember-functions-as-helper-polyfill@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ember-functions-as-helper-polyfill/-/ember-functions-as-helper-polyfill-2.1.1.tgz#25240db29b4cd0366a2d2954d2ea26ce0872ff8f"
+  integrity sha512-vZ2w9G/foohwtPm99Jos1m6bhlXyyyiJ4vhLbxyjWB4wh7bcpRzXPgCewDRrwefZQ2BwtHg3c9zvVMlI0g+o2Q==
   dependencies:
     ember-cli-babel "^7.26.11"
     ember-cli-typescript "^5.0.0"
