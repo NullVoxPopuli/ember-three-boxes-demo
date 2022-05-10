@@ -11381,10 +11381,10 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
 
-three@^0.140.1:
-  version "0.140.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.140.1.tgz#7d752c10f683b4dc2a96b155b51d6ec5a59909dc"
-  integrity sha512-gjTMCfmbXtjD/U1Thw2Lbq4FR6H2kcy7+bd09OSqiPwU5X49va87QC2Kbrdzg8MQvkCbKAagaIbf3m3rCqmcYg==
+three@^0.140.2:
+  version "0.140.2"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.140.2.tgz#ca0b7390d1ce4f7f2850e80afd00ef48fc244491"
+  integrity sha512-DdT/AHm/TbZXEhQKQpGt5/iSgBrmXpjU26FNtj1KhllVPTKj1eG4X/ShyD5W2fngE+I1s1wa4ttC4C3oCJt7Ag==
 
 through2@^2.0.0:
   version "2.0.5"
