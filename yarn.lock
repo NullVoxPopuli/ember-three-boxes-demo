@@ -6177,10 +6177,10 @@ ember-could-get-used-to-this@^1.0.1:
     ember-cli-babel "^7.22.1"
     ember-cli-htmlbars "^4.2.0"
 
-ember-deep-tracked@^1.3.13:
-  version "1.3.13"
-  resolved "https://registry.yarnpkg.com/ember-deep-tracked/-/ember-deep-tracked-1.3.13.tgz#de2902b30226cbccfedf96cee44c904dd2c890fe"
-  integrity sha512-nzEEVYRihlCoviq6IlsiwBz3vvkr3SJk0OmcQdeFgG9PLhvR0CrvkG9sVoCiIUKtMki/9Tut3oj1yXueSnlpjw==
+ember-deep-tracked@^1.3.14:
+  version "1.3.14"
+  resolved "https://registry.yarnpkg.com/ember-deep-tracked/-/ember-deep-tracked-1.3.14.tgz#a1deb9c147c6ab47c6e12749920a197a753bdabc"
+  integrity sha512-ngnubBvqzGqSeMEIdRfIG9fQrxqMEkuFJ1ye4McH8NqT4ZVlKvNaTDpL/Q4U1hbN+MjGyoYiO2W1sxgCSg739w==
   dependencies:
     "@embroider/macros" "^1.8.3"
     "@glimmer/tracking" "^1.0.4"
