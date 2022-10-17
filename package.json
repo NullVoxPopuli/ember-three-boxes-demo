@@ -54,7 +54,7 @@
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^6.0.0",
     "ember-resolver": "^8.0.3",
-    "ember-source": "4.7.1",
+    "ember-source": "4.8.0",
     "ember-template-lint": "^4.15.0",
     "ember-tracked-effects-placeholder": "^1.2.1",
     "eslint": "^7.5.0",
