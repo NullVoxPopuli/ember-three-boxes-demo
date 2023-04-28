@@ -68,7 +68,7 @@
     "prettier": "^2.8.8",
     "qunit": "^2.19.4",
     "qunit-dom": "^2.0.0",
-    "three": "^0.152.0",
+    "three": "^0.152.1",
     "tracked-built-ins": "^3.2.0",
     "webpack": "^5.81.0"
   },
