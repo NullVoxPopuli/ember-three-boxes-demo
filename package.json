@@ -70,7 +70,7 @@
     "qunit-dom": "^2.0.0",
     "three": "^0.152.2",
     "tracked-built-ins": "^3.2.0",
-    "webpack": "^5.81.0"
+    "webpack": "^5.82.0"
   },
   "dependencies": {
     "ember-deep-tracked": "^2.0.0",
