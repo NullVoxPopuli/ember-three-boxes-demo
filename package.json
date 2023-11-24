@@ -82,7 +82,9 @@
     "webpack": "^5.89.0"
   },
   "dependencies": {
+    "decorator-transforms": "^1.0.1",
     "ember-deep-tracked": "^2.0.0",
+    "ember-template-imports": "^4.0.0",
     "stats.js": "^0.17.0"
   }
 }

@@ -3,11 +3,39 @@ import { setComponentTemplate } from '@ember/component';
 import { registerDestructor } from '@ember/destroyable';
 import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@ember/object';
-import { modifier } from 'ember-could-get-used-to-this';
+import { modifier } from 'ember-modifier';
+import { hash } from '@ember/helper';
 
 import THREE from 'three';
+import DirectionalLight from './directional-light';
+import PerspectiveCamera from './perspective-camera';
+import Box from './box';
+
+  const setElement = modifier((element, [context]) => {
+    context.element = element;
+    context.element.appendChild(context.renderer.domElement);
+
+    if (context.camera) {
+      context.args.onInit(context.render);
+    }
+  });
 
 export default class SceneComponent extends Component {
+  <template>
+    <div {{setElement this}}></div>
+
+    {{yield
+      (hash
+        DirectionalLight=(component DirectionalLight scene=this.scene)
+        PerspectiveCamera=(component PerspectiveCamera
+          scene=this.scene
+          setCamera=this.setCamera
+        )
+        Box=(component Box scene=this.scene)
+      )
+    }}
+  </template>
+
   element = undefined;
 
   constructor(owner, args) {
@@ -23,17 +51,7 @@ export default class SceneComponent extends Component {
     });
   }
 
-  setElement = modifier((element) => {
-    this.element = element;
-    this.element.appendChild(this.renderer.domElement);
-
-    if (this.camera) {
-      this.args.onInit(this.render);
-    }
-  });
-
-  @action
-  setCamera(camera) {
+  setCamera = (camera)  => {
     this.camera = camera;
 
     if (this.element) {
@@ -41,26 +59,7 @@ export default class SceneComponent extends Component {
     }
   }
 
-  @action
-  render() {
+  render = () => {
     this.renderer.render(this.scene, this.camera);
   }
 }
-
-setComponentTemplate(
-  hbs`
-  <div {{this.setElement}}></div>
-
-  {{yield
-    (hash
-      DirectionalLight=(component 'demo/glimmer/scene/directional-light' scene=this.scene)
-      PerspectiveCamera=(component 'demo/glimmer/scene/perspective-camera'
-        scene=this.scene
-        setCamera=this.setCamera
-      )
-      Box=(component 'demo/glimmer/scene/box' scene=this.scene)
-    )
-  }}
-  `,
-  SceneComponent
-);

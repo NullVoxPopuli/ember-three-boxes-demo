@@ -1,7 +1,6 @@
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
 import { registerDestructor } from '@ember/destroyable';
 
 const ROTATION_SPEED = 0.01;
@@ -25,8 +24,7 @@ export default class DemoComponent extends Component {
     return window.innerWidth / window.innerHeight;
   }
 
-  @action
-  animate(updateCanvas) {
+  animate = (updateCanvas) => {
     // we're already animating
     if (this.frame) return;
 
@@ -52,5 +50,5 @@ export default class DemoComponent extends Component {
 
     boundCallback = loop.bind(this);
     this.frame = requestAnimationFrame(boundCallback);
-  }
+  };
 }
